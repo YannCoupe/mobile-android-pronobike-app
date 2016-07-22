@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Login -->
+
+    <style name="auth_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="auth_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingLeft">@dimen/padding</item>
+        <item name="android:paddingRight">@dimen/padding</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="auth_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginBottom">@dimen/padding</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">44sp</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="fontPath">fonts/ShadowsIntoLightTwo-Regular.ttf</item>
+    </style>
+
+    <style name="auth_textinput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="auth_edittext">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/green_1</item>
+    </style>
+
+    <style name="auth_edittext_email" parent="auth_edittext">
+        <item name="android:hint">@string/email</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:id">@id/auth_edittext_email</item>
+    </style>
+
+    <style name="auth_edittext_password" parent="auth_edittext">
+        <item name="android:hint">@string/mot_de_passe</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:id">@id/auth_edittext_password</item>
+    </style>
+
+    <style name="auth_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@color/green_1</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="auth_button_connect" parent="auth_button">
+        <item name="android:text">@string/connexion</item>
+        <item name="android:id">@id/auth_button_connect</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+    </style>
+
+    <style name="auth_button_create" parent="auth_button">
+        <item name="android:text">@string/creer_compte</item>
+        <item name="android:id">@id/auth_button_create</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+    </style>
+
+    <style name="auth_button_forget" parent="auth_button">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:text">@string/mot_de_passe_oublie</item>
+        <item name="android:id">@id/auth_button_forget</item>
+    </style>
+
+    <style name="auth_loader_parent" parent="auth_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:id">@id/auth_loader</item>
+    </style>
+
+    <style name="auth_loader_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:alpha">0.3</item>
+    </style>
+
+    <style name="auth_loader_progress">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <!-- Forget -->
+
+    <style name="forget_edittext_email" parent="auth_edittext">
+        <item name="android:hint">@string/email</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:id">@id/forget_edittext_email</item>
+    </style>
+
+    <style name="forget_loader_parent" parent="auth_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:id">@id/forget_loader</item>
+    </style>
+
+    <style name="forget_button_send" parent="auth_button">
+        <item name="android:text">@string/envoyer</item>
+        <item name="android:id">@id/forget_button_send</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+    </style>
+
+    <style name="forget_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/padding</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:text">@string/saisissez_adresse_email</item>
+    </style>
+
+    <style name="forget_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/padding</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Create -->
+
+    <style name="create_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="create_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_margin">@dimen/padding</item>
+    </style>
+
+    <style name="create_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/padding</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:text">@string/renseigner_donnees</item>
+    </style>
+
+    <style name="create_edittext_email" parent="auth_edittext">
+        <item name="android:hint">@string/email</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:id">@id/create_edittext_email</item>
+    </style>
+
+    <style name="create_edittext_password" parent="auth_edittext">
+        <item name="android:hint">@string/mot_de_passe</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:id">@id/create_edittext_password</item>
+    </style>
+
+    <style name="create_edittext_confirm" parent="auth_edittext">
+        <item name="android:hint">@string/confirmation_mot_de_passe</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:id">@id/create_edittext_confirm</item>
+    </style>
+
+    <style name="create_edittext_firstname" parent="auth_edittext">
+        <item name="android:hint">@string/prenom</item>
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:id">@id/create_edittext_firstname</item>
+    </style>
+
+    <style name="create_edittext_lastname" parent="auth_edittext">
+        <item name="android:hint">@string/nom</item>
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:id">@id/create_edittext_lastname</item>
+    </style>
+
+    <style name="create_button_send" parent="auth_button">
+        <item name="android:text">@string/creer_compte</item>
+        <item name="android:id">@id/create_button_send</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+    </style>
+
+    <style name="create_loader_parent" parent="auth_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:id">@id/create_loader</item>
+    </style>
+
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    style="@style/main_parent">
+
+    <android.support.v7.widget.Toolbar
+        style="@style/main_toolbar">
+
+        <RelativeLayout style="@style/main_navbar_container">
+
+            <ImageView style="@style/main_navbar_logo" />
+
+            <LinearLayout style="@style/main_navbar_tab_container">
+
+                <android.support.design.widget.TabLayout style="@style/main_navbar_tablayout" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <View style="@style/main_top_bar_separator"/>
+
+    <android.support.design.widget.CoordinatorLayout style="@style/main_content">
+
+        <android.support.v4.view.ViewPager style="@style/main_viewpager" />
+
+        <LinearLayout
+            style="@style/main_parent_fab">
+
+            <android.support.design.widget.FloatingActionButton
+                style="@style/main_create_fab" />
+
+            <View
+                style="@style/main_divider" />
+
+            <android.support.design.widget.FloatingActionButton
+                style="@style/main_join_fab" />
+
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>

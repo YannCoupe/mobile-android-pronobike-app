@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Main -->
+    <style name="main_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="main_toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:id">@id/main_toolbar</item>
+        <item name="contentInsetLeft">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+    <style name="main_navbar_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="main_navbar_tablayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:id">@id/main_navbar_tablayout</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabIndicatorColor">@android:color/transparent</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabPaddingStart">0dp</item>
+        <item name="tabPaddingEnd">0dp</item>
+        <item name="tabPaddingTop">0dp</item>
+        <item name="tabPaddingBottom">0dp</item>
+        <item name="tabMinWidth">?attr/actionBarSize</item>
+        <item name="tabMaxWidth">?attr/actionBarSize</item>
+        <item name="tabIndicatorHeight">0dp</item>
+    </style>
+
+    <style name="main_navbar_logo">
+        <item name="android:layout_width">@dimen/main_tab_size</item>
+        <item name="android:layout_height">@dimen/main_tab_size</item>
+        <item name="android:src">@drawable/pronobike</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+    <style name="main_navbar_tab_container">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_toRightOf">@id/main_navbar_logo</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabIndicatorColor">@android:color/transparent</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabPaddingStart">0dp</item>
+        <item name="tabPaddingEnd">0dp</item>
+        <item name="tabPaddingTop">0dp</item>
+        <item name="tabPaddingBottom">0dp</item>
+        <item name="tabMinWidth">?attr/actionBarSize</item>
+        <item name="tabMaxWidth">?attr/actionBarSize</item>
+        <item name="tabIndicatorHeight">0dp</item>
+    </style>
+    <style name="main_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="main_viewpager">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:id">@id/main_viewpager</item>
+    </style>
+
+    <!-- Tab view -->
+    <style name="tabview">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="tabview_icon">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:id">@id/tabview_icon</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+    <style name="main_top_bar_separator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/gray</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="main_parent_fab">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">right|bottom</item>>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="main_create_fab">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/fab_create</item>
+        <item name="android:id">@id/create_fab</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+    </style>
+
+    <style name="main_divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">@dimen/padding</item>
+        <item name="layout_anchor">@id/create_fab</item>
+        <item name="android:id">@id/main_divider</item>
+    </style>
+
+    <style name="main_join_fab">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/fab_join</item>
+        <item name="android:id">@id/join_fab</item>
+        <item name="layout_anchor">@id/main_divider</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+    </style>
+
+</resources>

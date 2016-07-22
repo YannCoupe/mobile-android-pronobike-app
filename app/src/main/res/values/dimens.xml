@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="main_margin">10dp</dimen>
+
+    <dimen name="main_tab_size">48dp</dimen>
+    <dimen name="main_tab_inside_size">32dp</dimen>
+
+    <dimen name="game_loader">34dp</dimen>
+    <dimen name="game_item_margin">8dp</dimen>
+
+    <dimen name="fab_margin">0dp</dimen>
+</resources>

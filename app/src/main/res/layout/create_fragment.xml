@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout style="@style/auth_parent">
+
+    <ScrollView
+        style="@style/create_parent">
+
+    <LinearLayout
+        style="@style/create_container">
+
+        <TextView style="@style/create_title" />
+
+        <!--  Email Label -->
+        <android.support.design.widget.TextInputLayout
+            style="@style/auth_textinput">
+            <EditText style="@style/create_edittext_email"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Password Label -->
+        <android.support.design.widget.TextInputLayout
+            style="@style/auth_textinput">
+            <EditText style="@style/create_edittext_password"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Confirm Label -->
+        <android.support.design.widget.TextInputLayout
+            style="@style/auth_textinput">
+            <EditText style="@style/create_edittext_confirm"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Firstname Label -->
+        <android.support.design.widget.TextInputLayout
+            style="@style/auth_textinput">
+            <EditText style="@style/create_edittext_firstname"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!--  Lastname Label -->
+        <android.support.design.widget.TextInputLayout
+            style="@style/auth_textinput">
+            <EditText style="@style/create_edittext_lastname"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            style="@style/create_button_send"/>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    <!-- loading layout -->
+    <RelativeLayout
+        style="@style/create_loader_parent">
+
+        <View
+            style="@style/auth_loader_view"/>
+
+        <ProgressBar
+            style="@style/auth_loader_progress"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

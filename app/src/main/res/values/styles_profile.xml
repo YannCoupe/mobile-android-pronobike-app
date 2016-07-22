@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Profil -->
+
+    <style name="profile_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="profile_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:padding">@dimen/padding</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="profile_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/padding</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:text">@string/renseigner_donnees</item>
+    </style>
+
+    <style name="profile_edittext_email" parent="auth_edittext">
+        <item name="android:hint">@string/email</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:id">@id/profile_edittext_email</item>
+    </style>
+
+    <style name="profile_edittext_password" parent="auth_edittext">
+        <item name="android:hint">@string/nouveau_mot_de_passe</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:id">@id/profile_edittext_password</item>
+    </style>
+
+    <style name="profile_edittext_confirm" parent="auth_edittext">
+        <item name="android:hint">@string/confirmation_mot_de_passe</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:id">@id/profile_edittext_confirm</item>
+    </style>
+
+    <style name="profile_edittext_firstname" parent="auth_edittext">
+        <item name="android:hint">@string/prenom</item>
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:id">@id/profile_edittext_firstname</item>
+    </style>
+
+    <style name="profile_edittext_lastname" parent="auth_edittext">
+        <item name="android:hint">@string/nom</item>
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:id">@id/profile_edittext_lastname</item>
+    </style>
+
+    <style name="profile_button_send" parent="auth_button">
+        <item name="android:text">@string/modifier_compte</item>
+        <item name="android:id">@id/profile_button_send</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+    </style>
+
+    <style name="profile_loader_parent" parent="auth_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:id">@id/profile_loader</item>
+    </style>
+
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    style="@style/main_parent">
+
+    <TextView style="@style/splash_title" />
+
+    <TextView style="@style/splash_version" />
+
+</RelativeLayout>

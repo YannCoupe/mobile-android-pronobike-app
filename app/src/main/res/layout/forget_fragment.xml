@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout style="@style/auth_parent">
+
+    <LinearLayout
+        style="@style/forget_container">
+
+        <TextView style="@style/forget_title" />
+
+        <!--  Email Label -->
+        <android.support.design.widget.TextInputLayout
+            style="@style/auth_textinput">
+            <EditText style="@style/forget_edittext_email"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            style="@style/forget_button_send"/>
+
+    </LinearLayout>
+
+    <!-- loading layout -->
+    <RelativeLayout
+        style="@style/forget_loader_parent">
+
+        <View
+            style="@style/auth_loader_view"/>
+
+        <ProgressBar
+            style="@style/auth_loader_progress"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

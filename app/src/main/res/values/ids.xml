@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="splash_version" type="id" />
+
+    <item name="auth_edittext_email" type="id" />
+    <item name="auth_edittext_password" type="id" />
+    <item name="auth_button_connect" type="id" />
+    <item name="auth_button_create" type="id" />
+    <item name="auth_button_forget" type="id" />
+    <item name="auth_loader" type="id" />
+
+    <item name="forget_edittext_email" type="id" />
+    <item name="forget_button_send" type="id" />
+    <item name="forget_loader" type="id" />
+
+    <item name="create_edittext_email" type="id" />
+    <item name="create_edittext_password" type="id" />
+    <item name="create_edittext_confirm" type="id" />
+    <item name="create_edittext_firstname" type="id" />
+    <item name="create_edittext_lastname" type="id" />
+    <item name="create_button_send" type="id" />
+    <item name="create_loader" type="id" />
+
+    <item name="profile_edittext_email" type="id" />
+    <item name="profile_edittext_password" type="id" />
+    <item name="profile_edittext_confirm" type="id" />
+    <item name="profile_edittext_firstname" type="id" />
+    <item name="profile_edittext_lastname" type="id" />
+    <item name="profile_button_send" type="id" />
+    <item name="profile_loader" type="id" />
+
+    <item name="tabview_icon" type="id" />
+    <item name="main_toolbar" type="id" />
+    <item name="main_tabs_parent" type="id" />
+    <item name="main_viewpager" type="id" />
+    <item name="main_navbar_logo" type="id" />
+    <item name="main_navbar_tablayout" type="id" />
+    <item name="main_divider" type="id" />
+    <item name="join_fab" type="id" />
+    <item name="create_fab" type="id" />
+
+    <item name="game_loader" type="id" />
+    <item name="game_tablayout" type="id" />
+    <item name="game_refresh" type="id" />
+    <item name="game_list" type="id" />
+    <item name="game_list_empty" type="id" />
+    <item name="game_empty" type="id" />
+
+    <item name="game_item_rank" type="id" />
+    <item name="game_item_name" type="id" />
+    <item name="game_item_competition" type="id" />
+    <item name="game_item_circuit" type="id" />
+    <item name="game_item_date" type="id" />
+
+</resources>
