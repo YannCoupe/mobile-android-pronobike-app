@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout style="@style/rank_item">
+
+    <LinearLayout
+        style="@style/rank_item_container">
+
+        <TextView
+            style="@style/rank_item_position" />
+
+        <TextView
+            style="@style/rank_item_name" />
+
+        <TextView
+            style="@style/rank_item_details" />
+
+        <TextView
+            style="@style/rank_item_total" />
+
+    </LinearLayout>
+
+</RelativeLayout>

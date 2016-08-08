@@ -7,7 +7,6 @@
     <dimen name="main_tab_inside_size">32dp</dimen>
 
     <dimen name="game_loader">34dp</dimen>
-    <dimen name="game_item_margin">8dp</dimen>
-
-    <dimen name="fab_margin">0dp</dimen>
+    <dimen name="rank_size">40dp</dimen>
+    <dimen name="item_margin">8dp</dimen>
 </resources>

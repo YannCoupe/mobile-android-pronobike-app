@@ -35,9 +35,6 @@
     <item name="main_viewpager" type="id" />
     <item name="main_navbar_logo" type="id" />
     <item name="main_navbar_tablayout" type="id" />
-    <item name="main_divider" type="id" />
-    <item name="join_fab" type="id" />
-    <item name="create_fab" type="id" />
 
     <item name="game_loader" type="id" />
     <item name="game_tablayout" type="id" />
@@ -51,5 +48,28 @@
     <item name="game_item_competition" type="id" />
     <item name="game_item_circuit" type="id" />
     <item name="game_item_date" type="id" />
+
+    <item name="game_detail_toolbar" type="id" />
+    <item name="game_detail_fragment_container" type="id" />
+    <item name="game_detail_bottom" type="id" />
+    <item name="game_detail_button_bet" type="id" />
+    <item name="game_detail_button_delete" type="id" />
+    <item name="game_detail_button_divider" type="id" />
+    <item name="game_detail_title" type="id" />
+    <item name="game_detail_recycler" type="id" />
+
+    <item name="rank_item_position" type="id" />
+    <item name="rank_item_name" type="id" />
+    <item name="rank_item_details" type="id" />
+    <item name="rank_item_total" type="id" />
+    <item name="rank_item" type="id" />
+
+    <item name="bet_toolbar" type="id" />
+    <item name="bet_fragment_container" type="id" />
+    <item name="bet_button_send" type="id" />
+    <item name="bet_rank_first" type="id" />
+    <item name="bet_rank_second" type="id" />
+    <item name="bet_rank_third" type="id" />
+
 
 </resources>

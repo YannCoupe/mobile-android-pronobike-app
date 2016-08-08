@@ -8,4 +8,47 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
+    <style name="rank_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">@dimen/padding</item>
+        <item name="android:paddingRight">@dimen/padding</item>
+        <item name="android:id">@id/rank_item</item>
+    </style>
+
+    <style name="rank_item_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/rank_size</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="rank_item_base">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="rank_item_position" parent="rank_item_base">
+        <item name="android:layout_width">@dimen/rank_size</item>
+        <item name="android:id">@id/rank_item_position</item>
+    </style>
+
+    <style name="rank_item_name" parent="rank_item_base">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:id">@id/rank_item_name</item>
+    </style>
+
+    <style name="rank_item_details" parent="rank_item_base">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:id">@id/rank_item_details</item>
+    </style>
+
+    <style name="rank_item_total" parent="rank_item_base">
+        <item name="android:layout_width">@dimen/rank_size</item>
+        <item name="android:id">@id/rank_item_total</item>
+    </style>
+
 </resources>

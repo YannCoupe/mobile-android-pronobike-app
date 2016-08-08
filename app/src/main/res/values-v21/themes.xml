@@ -1,0 +1,12 @@
+<resources>
+
+    <style name="common_app_theme" parent="@style/common_base_theme">
+        <item name="android:alertDialogTheme">@style/custom_alert_dialog_theme</item>
+        <item name="android:colorEdgeEffect">@color/green_1</item>
+    </style>
+
+    <style name="custom_alert_dialog_theme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/green_1</item>
+    </style>
+
+</resources>

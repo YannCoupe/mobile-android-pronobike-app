@@ -1,4 +1,4 @@
-package fr.ycoupe.pronobike.pronostic.service.bus.out;
+package fr.ycoupe.pronobike.pronostic.bus.out;
 
 import com.google.gson.JsonElement;
 

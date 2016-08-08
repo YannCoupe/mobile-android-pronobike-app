@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    style="@style/bet">
+
+    <LinearLayout
+        style="@style/bet_content">
+
+        <TextView style="@style/bet_title" />
+
+        <TextView style="@style/bet_rank_first" />
+
+        <TextView style="@style/bet_rank_second" />
+
+        <TextView style="@style/bet_rank_third" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        style="@style/bet_button_send"/>
+
+</RelativeLayout>

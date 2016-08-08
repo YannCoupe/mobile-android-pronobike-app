@@ -2,7 +2,6 @@ package fr.ycoupe.pronobike.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -15,8 +14,9 @@ import fr.ycoupe.pronobike.authentication.service.ProfileManager;
 import fr.ycoupe.pronobike.profile.ProfileFragment;
 import fr.ycoupe.pronobike.pronostic.GameFragment;
 import fr.ycoupe.pronobike.pronostic.RankFragment;
+import fr.ycoupe.pronobike.pronostic.bus.out.GameOpenEvent;
+import fr.ycoupe.pronobike.utils.BusManager;
 import fr.ycoupe.pronobike.utils.Logger;
-import fr.ycoupe.pronobike.utils.ViewUtils;
 
 /**
  * Login screen activity.
@@ -35,8 +35,6 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     private ViewPager viewPager;
     private ViewPagerAdapter adapter;
     private TabLayout tabLayout;
-    private FloatingActionButton joinFab;
-    private FloatingActionButton createFab;
 
     private RankFragment rankFragment;
     private GameFragment gameFragment;
@@ -48,7 +46,6 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         Logger.log(Logger.Level.DEBUG, TAG, "onCreate");
 
         setContentView(R.layout.main_activity);
-        ViewUtils.setOverscrollColor(getResources(), R.color.green_2);
 
         // View Pager
         viewPager = (ViewPager) findViewById(R.id.main_viewpager);
@@ -75,15 +72,12 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         tabLayout.setOnTabSelectedListener(this);
         addTabs();
 
-        joinFab = (FloatingActionButton) findViewById(R.id.join_fab);
-        joinFab.setVisibility(View.GONE);
-        createFab = (FloatingActionButton) findViewById(R.id.create_fab);
-        createFab.setVisibility(View.GONE);
-
         tabLayout.getTabAt(gameTabPosition).getCustomView().setSelected(true);
         viewPager.setCurrentItem(gameTabPosition);
 
         viewPager.addOnPageChangeListener(this);
+
+        subscriptions.add(BusManager.instance().observe(GameOpenEvent.class, this::onGameOpened));
     }
 
     private void addTabs() {
@@ -133,13 +127,6 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
 
     private void setGameVisible(final boolean isVisible) {
         Logger.log(Logger.Level.DEBUG, TAG, "setGameVisible " + isVisible);
-        if (isVisible) {
-            joinFab.show();
-            createFab.show();
-        } else {
-            joinFab.hide();
-            createFab.hide();
-        }
     }
 
     @Override
@@ -202,6 +189,17 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     @Override
     public void onTabReselected(final TabLayout.Tab tab) {
         Logger.log(Logger.Level.DEBUG, TAG, "onTabReselected");
+    }
+
+    // =============================================================================================
+    // Game events
+
+    private void onGameOpened(final GameOpenEvent event) {
+        Logger.log(Logger.Level.DEBUG, TAG, "onConversationOpened");
+
+        final Intent intent = new Intent(this, GameDetailActivity.class);
+        intent.putExtra(GameDetailActivity.GAME_EVENT_EXTRA, event);
+        startActivity(intent);
     }
 
     // =============================================================================================

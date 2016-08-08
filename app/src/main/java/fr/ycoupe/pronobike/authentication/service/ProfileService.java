@@ -2,8 +2,6 @@ package fr.ycoupe.pronobike.authentication.service;
 
 import com.google.gson.JsonElement;
 
-import java.net.IDN;
-
 import fr.ycoupe.pronobike.BuildConfig;
 import fr.ycoupe.pronobike.authentication.bus.out.CreateRequestFailedEvent;
 import fr.ycoupe.pronobike.authentication.bus.out.CreateRequestSuccessEvent;
@@ -13,8 +11,8 @@ import fr.ycoupe.pronobike.authentication.bus.out.ProfileRequestFailedEvent;
 import fr.ycoupe.pronobike.authentication.bus.out.ProfileRequestSuccessEvent;
 import fr.ycoupe.pronobike.profile.bus.out.UpdateRequestFailedEvent;
 import fr.ycoupe.pronobike.profile.bus.out.UpdateRequestSuccessEvent;
-import fr.ycoupe.pronobike.pronostic.service.bus.out.UserRequestFailedEvent;
-import fr.ycoupe.pronobike.pronostic.service.bus.out.UserRequestSuccessEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.UserRequestFailedEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.UserRequestSuccessEvent;
 import fr.ycoupe.pronobike.utils.BusManager;
 import fr.ycoupe.pronobike.utils.Logger;
 import fr.ycoupe.pronobike.utils.RestUtils;

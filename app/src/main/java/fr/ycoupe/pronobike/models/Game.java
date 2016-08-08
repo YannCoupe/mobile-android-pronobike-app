@@ -1,9 +1,18 @@
 package fr.ycoupe.pronobike.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import fr.ycoupe.pronobike.utils.Logger;
+
 /**
  * Created by Yann on 22/02/16.
  */
-public class Game {
+public class Game implements Parcelable {
+    private final static String TAG = Game.class.getSimpleName();
     
     private int idGame;
     private String name;
@@ -99,5 +108,55 @@ public class Game {
 
     public void setPositionUser(int positionUser) {
         this.positionUser = positionUser;
+    }
+
+    // =============================================================================================
+    // Parcelable Interface
+
+    public final static Creator<Game> CREATOR = new Creator<Game>() {
+        public Game createFromParcel(final Parcel in) {
+            return new Game(in);
+        }
+
+        public Game[] newArray(final int size) {
+            return new Game[size];
+        }
+    };
+
+    private Game(final Parcel in) {
+        readFromParcel(in);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(final Parcel dest, final int flags) {
+        Logger.log(Logger.Level.VERBOSE, TAG, "writeToParcel");
+        dest.writeInt(idGame);
+        dest.writeString(name);
+        dest.writeString(token);
+        dest.writeInt(admin);
+        dest.writeInt(idRace);
+        dest.writeString(dateRace);
+        dest.writeString(circuitRace);
+        dest.writeString(competitionRace);
+        dest.writeInt(positionUser);
+    }
+
+    private void readFromParcel(final Parcel in) {
+        Logger.log(Logger.Level.VERBOSE, TAG, "readFromParcel");
+
+        idGame = in.readInt();
+        name = in.readString();
+        token = in.readString();
+        admin = in.readInt();
+        idRace = in.readInt();
+        dateRace = in.readString();
+        circuitRace = in.readString();
+        competitionRace = in.readString();
+        positionUser = in.readInt();
     }
 }

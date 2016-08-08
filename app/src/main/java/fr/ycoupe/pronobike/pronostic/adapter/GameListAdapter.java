@@ -11,6 +11,8 @@ import java.util.List;
 
 import fr.ycoupe.pronobike.R;
 import fr.ycoupe.pronobike.models.Game;
+import fr.ycoupe.pronobike.pronostic.bus.out.GameOpenEvent;
+import fr.ycoupe.pronobike.utils.BusManager;
 import fr.ycoupe.pronobike.utils.Logger;
 
 /**
@@ -96,6 +98,10 @@ public class GameListAdapter extends RecyclerView.Adapter<GameViewHolder> {
     private void onItemClick(final int position){
         Logger.log(Logger.Level.DEBUG, TAG, "onItemClick : " + position);
         final Game game = getItem(position);
+
+        final GameOpenEvent event = new GameOpenEvent();
+        event.game = game;
+        BusManager.instance().send(event);
     }
 
 }

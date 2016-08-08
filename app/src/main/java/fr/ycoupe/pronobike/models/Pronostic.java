@@ -13,14 +13,12 @@ public class Pronostic {
     private int third;
 
     public Pronostic(){
-
         this.idPronostic = 0;
         this.gameId = 0;
         this.raceId = 0;
         this.first = 0;
         this.second = 0;
         this.third = 0;
-
     }
 
     public int getIdPronostic() {

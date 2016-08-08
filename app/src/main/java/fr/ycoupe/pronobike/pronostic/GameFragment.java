@@ -27,10 +27,11 @@ import fr.ycoupe.pronobike.authentication.service.ProfileManager;
 import fr.ycoupe.pronobike.authentication.service.ProfileService;
 import fr.ycoupe.pronobike.models.Game;
 import fr.ycoupe.pronobike.models.User;
+import fr.ycoupe.pronobike.profile.bus.out.RefreshEvent;
 import fr.ycoupe.pronobike.pronostic.adapter.GameListAdapter;
 import fr.ycoupe.pronobike.pronostic.adapter.GameRecyclerView;
-import fr.ycoupe.pronobike.pronostic.service.bus.out.UserRequestFailedEvent;
-import fr.ycoupe.pronobike.pronostic.service.bus.out.UserRequestSuccessEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.UserRequestFailedEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.UserRequestSuccessEvent;
 import fr.ycoupe.pronobike.sqlite.GameDAO;
 import fr.ycoupe.pronobike.utils.BusManager;
 import fr.ycoupe.pronobike.utils.Logger;
@@ -107,12 +108,17 @@ public class GameFragment extends Fragment {
         });
 
         subscriptions = new SubscriptionList();
+        subscriptions.add(BusManager.instance().observe(RefreshEvent.class, this::refresh));
         subscriptions.add(BusManager.instance().observe(UserRequestSuccessEvent.class, this::onUserRequestSuccess));
         subscriptions.add(BusManager.instance().observe(UserRequestFailedEvent.class, this::onUserRequestFailed));
 
         reloadDatas();
 
         return view;
+    }
+
+    private void refresh(final RefreshEvent event){
+        reloadDatas();
     }
 
     /*

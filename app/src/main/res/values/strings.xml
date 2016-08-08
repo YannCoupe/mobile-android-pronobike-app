@@ -4,7 +4,7 @@
     <string name="aucune_partie_token">"Aucune partie ne correspond avec ce token."</string>
     <string name="changement_mot_de_passe">"Changement de mot de passe"</string>
     <string name="changer_mot_de_passe">"Changer mon mot de passe"</string>
-    <string name="choisissez_podium">"Choisissez votre podium pour cette course. Attention vous ne pourrez plus envoyer votre pronostic arpès le départ de la course."</string>
+    <string name="choisissez_podium">"Podium de la course :"</string>
     <string name="choix_competition">"Choix de la compétition"</string>
     <string name="confirmation_mot_de_passe">"Confirmation du mot de passe"</string>
     <string name="connexion">"Connexion"</string>
@@ -47,6 +47,7 @@
     <string name="prochain_gp">"Prochain GP : %s"</string>
     <string formatted="false" name="prochain_gp_le">"Prochain GP : %s le %s"</string>
     <string name="pronostic">"Pronostic"</string>
+    <string name="pronostiquer">"Pronostiquer"</string>
     <string name="pronostiquer_prochaine_course">"Pronostiquer la prochaine course"</string>
     <string name="rang">"Rang"</string>
     <string name="rejoindre">"Rejoindre"</string>
@@ -58,6 +59,7 @@
     <string name="renseigner_token">"Renseigez le token de la partie qui vous a été envoyé :"</string>
     <string name="resultats">"Résultats"</string>
     <string name="saisissez_adresse_email">"Saisissez votre adresse email :"</string>
+    <string name="supprimer">"Supprimer"</string>
     <string name="supprimer_partie">"Supprimer la partie"</string>
     <string name="suppression_partie">"Suppression de la partie"</string>
     <string name="tableau_de_bord">"Tableau de bord"</string>
