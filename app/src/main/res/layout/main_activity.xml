@@ -20,10 +20,23 @@
 
     <View style="@style/main_top_bar_separator"/>
 
-    <android.support.design.widget.CoordinatorLayout style="@style/main_content">
+    <RelativeLayout style="@style/main_content">
 
         <android.support.v4.view.ViewPager style="@style/main_viewpager" />
 
-    </android.support.design.widget.CoordinatorLayout>
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            style="@style/main_fab_menu">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                style="@style/main_fab_rules"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                style="@style/main_fab_join"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                style="@style/main_fab_create"/>
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+    </RelativeLayout>
 
 </LinearLayout>

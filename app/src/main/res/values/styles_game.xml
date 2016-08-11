@@ -213,6 +213,12 @@
         <item name="android:id">@id/game_detail_button_delete</item>
     </style>
 
+    <style name="game_detail_loader_parent" parent="auth_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:id">@id/game_detail_loader</item>
+    </style>
+
     <style name="game_detail_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -230,6 +236,87 @@
         <item name="android:layout_below">@id/game_detail_title</item>
         <item name="android:layout_above">@id/game_detail_bottom</item>
         <item name="android:id">@id/game_detail_recycler</item>
+    </style>
+
+    <style name="game_create_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="game_create_fragment_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:id">@id/game_create_fragment_container</item>
+    </style>
+
+    <style name="game_create">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="game_create_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="game_create_loader_parent" parent="auth_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:id">@id/game_create_loader</item>
+    </style>
+
+    <style name="game_create_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:text">@string/creer_partie_desc</item>
+    </style>
+
+    <style name="game_create_name" parent="auth_edittext">
+        <item name="android:hint">@string/nom_partie</item>
+        <item name="android:inputType">text|textCapSentences</item>
+        <item name="android:id">@id/game_create_name</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+        <item name="android:layout_marginLeft">@dimen/padding</item>
+        <item name="android:layout_marginRight">@dimen/padding</item>
+    </style>
+
+    <style name="game_create_button_send">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_margin">@dimen/padding</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@color/green_1</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:text">@string/creer</item>
+        <item name="android:id">@id/game_create_button_send</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+    </style>
+
+    <style name="game_create_competition">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_marginLeft">@dimen/padding</item>
+        <item name="android:layout_marginRight">@dimen/padding</item>
+        <item name="android:background">@drawable/background_rank</item>
+        <item name="android:id">@id/game_create_competition</item>
+        <item name="android:text">@string/choix_competition</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
     </style>
 
 </resources>

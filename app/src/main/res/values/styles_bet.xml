@@ -42,6 +42,12 @@
         <item name="android:text">@string/choisissez_podium</item>
     </style>
 
+    <style name="bet_loader_parent" parent="auth_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:id">@id/bet_loader</item>
+    </style>
+
     <style name="bet_button_send">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">40dp</item>
@@ -52,6 +58,7 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">16sp</item>
         <item name="android:text">@string/envoyer</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
         <item name="android:id">@id/bet_button_send</item>
     </style>
 
@@ -86,15 +93,5 @@
         <item name="android:text">@string/position_3eme</item>
         <item name="android:layout_marginTop">@dimen/padding</item>
     </style>
-
-    <!--<TextView-->
-        <!--android:id="@+id/pronosticFirstTextView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="40dp"-->
-        <!--android:gravity="center_vertical"-->
-        <!--android:background="@android:color/transparent"-->
-        <!--android:textColor="@color/yellow"-->
-        <!--android:text="@string/position_1er"-->
-        <!--android:textSize="18sp" />-->
 
 </resources>

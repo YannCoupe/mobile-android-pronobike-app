@@ -35,6 +35,15 @@
     <item name="main_viewpager" type="id" />
     <item name="main_navbar_logo" type="id" />
     <item name="main_navbar_tablayout" type="id" />
+    <item name="main_fab_menu" type="id" />
+    <item name="main_fab_rules" type="id" />
+    <item name="main_fab_create" type="id" />
+    <item name="main_fab_join" type="id" />
+
+    <item name="rules_toolbar" type="id" />
+    <item name="rules_container" type="id" />
+    <item name="rule_item_title" type="id" />
+    <item name="rule_item_text" type="id" />
 
     <item name="game_loader" type="id" />
     <item name="game_tablayout" type="id" />
@@ -57,6 +66,14 @@
     <item name="game_detail_button_divider" type="id" />
     <item name="game_detail_title" type="id" />
     <item name="game_detail_recycler" type="id" />
+    <item name="game_detail_loader" type="id" />
+
+    <item name="game_create_fragment_container" type="id" />
+    <item name="game_create_competition" type="id" />
+    <item name="game_create_name" type="id" />
+    <item name="game_create_button_send" type="id" />
+    <item name="game_create_loader" type="id" />
+    <item name="game_create_toolbar" type="id" />
 
     <item name="rank_item_position" type="id" />
     <item name="rank_item_name" type="id" />
@@ -64,12 +81,23 @@
     <item name="rank_item_total" type="id" />
     <item name="rank_item" type="id" />
 
+    <item name="rank_refresh" type="id" />
+    <item name="rank_loader" type="id" />
+    <item name="rank_list" type="id" />
+    <item name="rank_title" type="id" />
+
     <item name="bet_toolbar" type="id" />
     <item name="bet_fragment_container" type="id" />
     <item name="bet_button_send" type="id" />
     <item name="bet_rank_first" type="id" />
     <item name="bet_rank_second" type="id" />
     <item name="bet_rank_third" type="id" />
+    <item name="bet_loader" type="id" />
 
+    <item name="join_toolbar" type="id" />
+    <item name="join_fragment_container" type="id" />
+    <item name="join_edittext" type="id" />
+    <item name="join_button_send" type="id" />
+    <item name="join_loader" type="id" />
 
 </resources>

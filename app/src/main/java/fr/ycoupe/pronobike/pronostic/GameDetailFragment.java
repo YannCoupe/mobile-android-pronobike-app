@@ -11,34 +11,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.JsonElement;
 import com.jakewharton.rxbinding.view.RxView;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.ycoupe.pronobike.R;
-import fr.ycoupe.pronobike.activities.LoginActivity;
-import fr.ycoupe.pronobike.authentication.service.ProfileManager;
 import fr.ycoupe.pronobike.models.Game;
-import fr.ycoupe.pronobike.models.User;
 import fr.ycoupe.pronobike.profile.bus.out.RefreshEvent;
 import fr.ycoupe.pronobike.pronostic.adapter.RankListAdapter;
 import fr.ycoupe.pronobike.pronostic.bus.out.BetOpenedEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.GameDeletedFailedEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.GameDeletedSuccessEvent;
-import fr.ycoupe.pronobike.pronostic.bus.out.UserRequestFailedEvent;
-import fr.ycoupe.pronobike.pronostic.bus.out.UserRequestSuccessEvent;
 import fr.ycoupe.pronobike.pronostic.service.GameService;
 import fr.ycoupe.pronobike.sqlite.GameDAO;
 import fr.ycoupe.pronobike.utils.BusManager;
 import fr.ycoupe.pronobike.utils.Logger;
-import fr.ycoupe.pronobike.utils.PreferenceManager;
 import rx.internal.util.SubscriptionList;
 
 /**
@@ -61,6 +55,8 @@ public class GameDetailFragment extends Fragment {
     TextView title;
     @BindView(R.id.game_detail_recycler)
     RecyclerView recyclerView;
+    @BindView(R.id.game_detail_loader)
+    RelativeLayout loader;
 
     private RankListAdapter rankListAdapter;
 
@@ -123,11 +119,14 @@ public class GameDetailFragment extends Fragment {
                 .setMessage(String.format(getString(R.string.etes_vous_supprimer_partie), game.getName()))
                 .setNegativeButton(android.R.string.no, null)
                 .setPositiveButton(android.R.string.yes, (final DialogInterface dialog, final int which) -> {
+                    showLoader(true);
                     gameService.deleteGame(game.getIdGame());
                 }).show();
     }
 
     private void onGameDeletedSuccess(final GameDeletedSuccessEvent event){
+        Logger.log(Logger.Level.DEBUG, TAG, "onGameDeletedSuccess");
+        showLoader(false);
         try {
             final JsonElement jsonElement = event.status;
             if (jsonElement != null) {
@@ -163,6 +162,8 @@ public class GameDetailFragment extends Fragment {
     }
 
     private void onGameDeletedFailed(final GameDeletedFailedEvent event){
+        Logger.log(Logger.Level.DEBUG, TAG, "onGameDeletedSuccess");
+        showLoader(false);
         showError(getString(R.string.erreur));
     }
 
@@ -173,6 +174,10 @@ public class GameDetailFragment extends Fragment {
                 .setNeutralButton(android.R.string.ok, (DialogInterface dialog, int which) -> {
                     dialog.cancel();
                 }).show();
+    }
+
+    private void showLoader(final boolean show){
+        loader.setVisibility(show ? View.VISIBLE : View.INVISIBLE);
     }
 
     @Override

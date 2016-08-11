@@ -2,18 +2,27 @@ package fr.ycoupe.pronobike.pronostic.service;
 
 import com.google.gson.JsonElement;
 
+import java.util.ArrayList;
+
 import fr.ycoupe.pronobike.BuildConfig;
-import fr.ycoupe.pronobike.authentication.bus.out.ProfileRequestFailedEvent;
-import fr.ycoupe.pronobike.authentication.bus.out.ProfileRequestSuccessEvent;
 import fr.ycoupe.pronobike.authentication.service.ProfileManager;
+import fr.ycoupe.pronobike.models.Competition;
+import fr.ycoupe.pronobike.models.Game;
 import fr.ycoupe.pronobike.models.Pronostic;
 import fr.ycoupe.pronobike.pronostic.bus.out.BetFailedEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.BetSuccessEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.GameCreatedFailedEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.GameCreatedSuccessEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.GameDeletedFailedEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.GameDeletedSuccessEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.JoinFailedEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.JoinSuccessEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.RankFailedEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.RankSuccessEvent;
 import fr.ycoupe.pronobike.utils.BusManager;
 import fr.ycoupe.pronobike.utils.Logger;
 import fr.ycoupe.pronobike.utils.RestUtils;
+import fr.ycoupe.pronobike.utils.StringUtils;
 import retrofit2.Retrofit;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -102,6 +111,113 @@ public class GameService {
         Logger.log(Logger.Level.DEBUG, TAG, "onBetFailed");
 
         final BetFailedEvent event = new BetFailedEvent();
+        BusManager.instance().send(event);
+    }
+
+    /**
+     * Get rank with firends
+     *
+     * @param games: List of common games
+     */
+    public void rank(ArrayList<Game> games) {
+        Logger.log(Logger.Level.DEBUG, TAG, "bet");
+
+        final ArrayList<String> ids = new ArrayList<>();
+
+        for(final Game game : games){
+            ids.add(String.valueOf(game.getIdGame()));
+        }
+
+        gameApi.rank(
+                StringUtils.join(ids, ","))
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        p -> onRankSuccess(p),
+                        this::onRankFailed
+                );
+    }
+
+    private void onRankSuccess(final JsonElement element) {
+        Logger.log(Logger.Level.DEBUG, TAG, "onRankSuccess");
+
+        final RankSuccessEvent event = new RankSuccessEvent();
+        event.element = element;
+        BusManager.instance().send(event);
+    }
+
+
+    private void onRankFailed(final Throwable error) {
+        Logger.log(Logger.Level.DEBUG, TAG, "onRankFailed");
+
+        final RankFailedEvent event = new RankFailedEvent();
+        BusManager.instance().send(event);
+    }
+
+    /**
+     * Join a game
+     *
+     * @param token The game identifiant
+     */
+    public void join(final String token) {
+        Logger.log(Logger.Level.DEBUG, TAG, "join");
+
+        gameApi.join(ProfileManager.instance().profile.getIdUser(), token)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        p -> onJoinSuccess(p),
+                        this::onJoinFailed
+                );
+    }
+
+    private void onJoinSuccess(final JsonElement element) {
+        Logger.log(Logger.Level.DEBUG, TAG, "onJoinSuccess");
+
+        final JoinSuccessEvent event = new JoinSuccessEvent();
+        event.status = element;
+        BusManager.instance().send(event);
+    }
+
+
+    private void onJoinFailed(final Throwable error) {
+        Logger.log(Logger.Level.DEBUG, TAG, "onJoinFailed");
+
+        final JoinFailedEvent event = new JoinFailedEvent();
+        BusManager.instance().send(event);
+    }
+
+    /**
+     * Create a game
+     *
+     * @param name The game name
+     * @param competition The {@link Competition}
+     */
+    public void create(final String name, final Competition competition) {
+        Logger.log(Logger.Level.DEBUG, TAG, "join");
+
+        gameApi.create(ProfileManager.instance().profile.getIdUser(), name, competition.getIdCompetition())
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        p -> onCreateSuccess(p),
+                        this::onCreateFailed
+                );
+    }
+
+    private void onCreateSuccess(final JsonElement element) {
+        Logger.log(Logger.Level.DEBUG, TAG, "onCreateSuccess");
+
+        final GameCreatedSuccessEvent event = new GameCreatedSuccessEvent();
+        event.status = element;
+        BusManager.instance().send(event);
+    }
+
+
+    private void onCreateFailed(final Throwable error) {
+        Logger.log(Logger.Level.DEBUG, TAG, "onCreateFailed");
+
+        final GameCreatedFailedEvent event = new GameCreatedFailedEvent();
         BusManager.instance().send(event);
     }
 }

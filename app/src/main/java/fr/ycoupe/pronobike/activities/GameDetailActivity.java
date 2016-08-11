@@ -6,6 +6,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import fr.ycoupe.pronobike.R;
 import fr.ycoupe.pronobike.models.Game;
 import fr.ycoupe.pronobike.pronostic.GameDetailFragment;
@@ -23,7 +25,8 @@ public class GameDetailActivity extends BaseActivity {
 
     public final static String GAME_EVENT_EXTRA = TAG + ".GAME_EVENT_EXTRA";
 
-    private Toolbar toolbar;
+    @BindView(R.id.game_detail_toolbar)
+    Toolbar toolbar;
 
     private Game game;
 
@@ -35,12 +38,12 @@ public class GameDetailActivity extends BaseActivity {
         Logger.log(Logger.Level.DEBUG, TAG, "onCreate");
 
         setContentView(R.layout.game_detail_activity);
+        ButterKnife.bind(this);
 
         final GameOpenEvent event = getIntent().getParcelableExtra(GAME_EVENT_EXTRA);
         game = event.game;
 
         // Toolbar
-        toolbar = (Toolbar) findViewById(R.id.game_detail_toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.toolbar_back);
         toolbar.setTitleTextColor(getResources().getColor(R.color.green_1));

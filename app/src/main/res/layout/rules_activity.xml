@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/rules">
+
+    <android.support.v7.widget.Toolbar style="@style/rules_toolbar"/>
+
+    <View style="@style/main_top_bar_separator"/>
+
+    <ScrollView style="@style/rules_scroll">
+
+        <LinearLayout style="@style/rules_container" />
+    </ScrollView>
+
+</LinearLayout>

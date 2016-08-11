@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout style="@style/rank_parent">
+<RelativeLayout
+    style="@style/rank">
 
+    <TextView style="@style/rank_title" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        style="@style/rank_refresh">
+
+        <android.support.v7.widget.RecyclerView
+            style="@style/rank_list" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <ProgressBar style="@style/rank_list_loader"/>
 
 </RelativeLayout>

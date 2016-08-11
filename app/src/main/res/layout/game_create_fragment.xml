@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    style="@style/game_create">
+
+    <LinearLayout
+        style="@style/game_create_content">
+
+        <TextView style="@style/game_create_title" />
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/auth_textinput">
+            <EditText style="@style/game_create_name"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView style="@style/game_create_competition" />
+
+        <android.support.v7.widget.AppCompatButton
+            style="@style/game_create_button_send"/>
+    </LinearLayout>
+
+
+    <!-- loading layout -->
+    <RelativeLayout
+        style="@style/game_create_loader_parent">
+
+        <View
+            style="@style/auth_loader_view"/>
+
+        <ProgressBar
+            style="@style/auth_loader_progress"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

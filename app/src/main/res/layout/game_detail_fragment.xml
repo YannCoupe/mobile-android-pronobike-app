@@ -20,4 +20,16 @@
 
     </LinearLayout>
 
+    <!-- loading layout -->
+    <RelativeLayout
+        style="@style/game_detail_loader_parent">
+
+        <View
+            style="@style/auth_loader_view"/>
+
+        <ProgressBar
+            style="@style/auth_loader_progress"/>
+
+    </RelativeLayout>
+
 </RelativeLayout>

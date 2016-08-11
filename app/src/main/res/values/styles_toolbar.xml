@@ -12,6 +12,18 @@
         <item name="android:id">@id/game_detail_toolbar</item>
     </style>
 
+    <style name="rules_toolbar" parent="detail_toolbar">
+        <item name="android:id">@id/rules_toolbar</item>
+    </style>
+
+    <style name="game_create_toolbar" parent="detail_toolbar">
+        <item name="android:id">@id/game_create_toolbar</item>
+    </style>
+
+    <style name="join_toolbar" parent="detail_toolbar">
+        <item name="android:id">@id/join_toolbar</item>
+    </style>
+
     <style name="bet_toolbar" parent="detail_toolbar">
         <item name="android:id">@id/bet_toolbar</item>
     </style>

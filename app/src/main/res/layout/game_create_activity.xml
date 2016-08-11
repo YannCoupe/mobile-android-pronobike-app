@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/game_create_container">
+
+    <android.support.v7.widget.Toolbar style="@style/game_create_toolbar"/>
+
+    <View style="@style/main_top_bar_separator"/>
+
+    <LinearLayout style="@style/game_create_fragment_container" />
+
+</LinearLayout>

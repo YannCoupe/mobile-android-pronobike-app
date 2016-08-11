@@ -6,13 +6,15 @@
     <string name="changer_mot_de_passe">"Changer mon mot de passe"</string>
     <string name="choisissez_podium">"Podium de la course :"</string>
     <string name="choix_competition">"Choix de la compétition"</string>
+    <string name="classement">"Classement des vos amis :"</string>
     <string name="confirmation_mot_de_passe">"Confirmation du mot de passe"</string>
     <string name="connexion">"Connexion"</string>
     <string name="content_description">""</string>
     <string name="course_commencee">"La course est commencée, il est trop tard pour pronostiquer pour : %s. Dommage.."</string>
+    <string name="creer">"Créer"</string>
     <string name="creer_compte">"Créer mon compte"</string>
     <string name="creer_partie">"Créer une partie"</string>
-    <string name="creer_partie_desc">"Créer une partie afin de pronostiquer sur les podiums des plus grandes compétitions de motocyclisme. Choisissez une compétition dans la liste, donnez lui un nom et validez. Ensuite, il vous suffira d'inviter vos amis via le token que vous trouverez dans le message de confirmation."</string>
+    <string name="creer_partie_desc">"Créer une partie afin de pronostiquer sur les podiums des plus grandes compétitions de motocyclisme :"</string>
     <string name="creer_partie_ou_rejoindre">"Créez votre partie ou rejoinez en une !"</string>
     <string name="deja_inscris">"Vous êtes déjà inscrit dans cette partie."</string>
     <string name="email">"Email"</string>
@@ -50,6 +52,7 @@
     <string name="pronostiquer">"Pronostiquer"</string>
     <string name="pronostiquer_prochaine_course">"Pronostiquer la prochaine course"</string>
     <string name="rang">"Rang"</string>
+    <string name="regles">"Règles"</string>
     <string name="rejoindre">"Rejoindre"</string>
     <string name="rejoindre_partie">"Rejoindre une partie"</string>
     <string name="renseigner_champs">"Veuillez renseigner tous les champs."</string>
@@ -71,6 +74,7 @@
     <string name="verifier_identifiants">"Veuillez vérifier vos identifiants."</string>
     <string name="version">"Yann Coupé - v%s"</string>
     <string name="veuillez_renseigner_token">"Veuillez renseigner un token."</string>
+    <string name="voir_regles">"Voir les règles"</string>
     <string name="votre_compte_cree">"Votre compte a bien été créé !"</string>
     <string name="votre_modifications_prises">"Vos modifications ont bien été prises en compte."</string>
     <string name="vous_venez_supprimer_partie">"Vous venez de supprimer la partie %s."</string>

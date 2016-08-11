@@ -1,0 +1,16 @@
+{
+  "rules": [
+    {
+      "title": "Points",
+      "text": "Le bon pronostic de la première place rapporte 3 pts, celui de la deuxième 2pts et enfin celui de la troisème 1 pt.\n\n"
+    },
+    {
+      "title": "Création de partie",
+      "text": "Créer une partie afin de pronostiquer sur les podiums des plus grandes compétitions de motocyclisme. Choisissez une compétition dans la liste, donnez lui un nom et validez. Ensuite, il vous suffira d'inviter vos amis via le token que vous trouverez dans le message de confirmation.\n\n"
+    },
+    {
+      "title": "Invitation",
+      "text": "Vous pouvez inviter vos amis à une partie en leur envoyant le token de celle-ci. Ce token correspond à l'identifiant de la partie. Vos amis n'auront plus qu'à entrer ce token et le tour est joué !\n\n"
+    }
+  ]
+}

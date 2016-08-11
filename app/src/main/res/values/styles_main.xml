@@ -76,6 +76,59 @@
         <item name="android:id">@id/main_viewpager</item>
     </style>
 
+    <!-- Fab -->
+    <style name="fab_menu_labels">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">6dp</item>
+        <item name="android:background">@drawable/background_fabsubmenu</item>
+    </style>
+
+    <style name="main_fab_menu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_margin">@dimen/padding</item>
+        <item name="fab_addButtonColorNormal">@color/green_1</item>
+        <item name="fab_addButtonColorPressed">@color/green_2</item>
+        <item name="fab_addButtonPlusIconColor">@android:color/white</item>
+        <item name="fab_labelStyle">@style/fab_menu_labels</item>
+        <item name="fab_labelsPosition">left</item>
+        <item name="android:id">@id/main_fab_menu</item>
+    </style>
+
+    <style name="main_fab_menu_item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fab_colorNormal">@android:color/white</item>
+        <item name="fab_colorPressed">@color/whisper</item>
+        <item name="fab_size">mini</item>
+    </style>
+
+    <style name="main_fab_rules" parent="@style/main_fab_menu_item">
+        <item name="fab_title">@string/voir_regles</item>
+        <item name="fab_icon">@drawable/fab_rules</item>
+        <item name="android:id">@id/main_fab_rules</item>
+    </style>
+
+    <style name="main_fab_join" parent="@style/main_fab_menu_item">
+        <item name="fab_title">@string/rejoindre</item>
+        <item name="fab_icon">@drawable/fab_join</item>
+        <item name="android:id">@id/main_fab_join</item>
+    </style>
+
+    <style name="main_fab_create" parent="@style/main_fab_menu_item">
+        <item name="fab_title">@string/creer</item>
+        <item name="fab_icon">@drawable/fab_create</item>
+        <item name="android:id">@id/main_fab_create</item>
+    </style>
+
     <!-- Tab view -->
     <style name="tabview">
         <item name="android:layout_width">match_parent</item>

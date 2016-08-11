@@ -3,13 +3,13 @@ package fr.ycoupe.pronobike.pronostic;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.JsonElement;
@@ -57,6 +57,8 @@ public class BetFragment extends Fragment {
     TextView second;
     @BindView(R.id.bet_rank_third)
     TextView third;
+    @BindView(R.id.bet_loader)
+    RelativeLayout loader;
 
     private SubscriptionList subscriptions;
 
@@ -163,7 +165,7 @@ public class BetFragment extends Fragment {
                 this.thirdPilot = pilot;
                 break;
         }
-        tv.setTextColor(getResources().getColor(R.color.gray));
+        tv.setTextColor(getResources().getColor(R.color.green_1));
         tv.setText(pilot.getNumber() + " " + pilot.getFirstname() + " " + pilot.getLastname());
     }
 
@@ -194,9 +196,12 @@ public class BetFragment extends Fragment {
         pronostic.setThird(thirdPilot.getIdPilot());
 
         gameService.bet(pronostic);
+        showLoader(true);
     }
 
     private void onBetSuccess(final BetSuccessEvent event){
+        Logger.log(Logger.Level.DEBUG, TAG, "onBetSuccess");
+        showLoader(false);
         try {
             final JsonElement jsonElement = event.status;
             if (jsonElement != null) {
@@ -225,6 +230,8 @@ public class BetFragment extends Fragment {
     }
 
     private void onBetFailed(final BetFailedEvent event){
+        Logger.log(Logger.Level.DEBUG, TAG, "onBetFailed");
+        showLoader(false);
         showMessage(getString(R.string.erreur), false);
     }
 
@@ -251,5 +258,9 @@ public class BetFragment extends Fragment {
         Logger.log(Logger.Level.DEBUG, TAG, "onDestroyView");
 
         subscriptions.unsubscribe();
+    }
+
+    private void showLoader(final boolean show){
+        loader.setVisibility(show ? View.VISIBLE : View.INVISIBLE);
     }
 }

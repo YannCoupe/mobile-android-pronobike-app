@@ -213,6 +213,8 @@ public class ProfileFragment extends Fragment {
                                 .setNeutralButton(android.R.string.ok, (DialogInterface dialog, int which) -> {
                                     dialog.cancel();
                                     loadValues();
+                                    passwordEditText.setText("");
+                                    confirmEditText.setText("");
                                 }).show();
                         return;
 

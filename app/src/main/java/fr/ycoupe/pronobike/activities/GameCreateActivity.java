@@ -1,43 +1,33 @@
 package fr.ycoupe.pronobike.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.ycoupe.pronobike.R;
-import fr.ycoupe.pronobike.models.Game;
-import fr.ycoupe.pronobike.pronostic.BetFragment;
-import fr.ycoupe.pronobike.pronostic.bus.out.BetOpenedEvent;
+import fr.ycoupe.pronobike.pronostic.GameCreateFragment;
 import fr.ycoupe.pronobike.utils.Logger;
 
 /**
  * Login screen activity.
  */
-public class BetActivity extends BaseActivity {
-    private final static String TAG = BetActivity.class.getSimpleName();
+public class GameCreateActivity extends BaseActivity {
+    private final static String TAG = GameCreateActivity.class.getSimpleName();
 
-    public final static String BET_EVENT_EXTRA = TAG + ".BET_EVENT_EXTRA";
-
-    @BindView(R.id.bet_toolbar)
+    @BindView(R.id.game_create_toolbar)
     Toolbar toolbar;
 
-    private Game game;
-
-    private BetFragment betFragment;
+    private GameCreateFragment gameCreateFragment;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Logger.log(Logger.Level.DEBUG, TAG, "onCreate");
 
-        setContentView(R.layout.bet_activity);
+        setContentView(R.layout.game_create_activity);
         ButterKnife.bind(this);
-
-        final BetOpenedEvent event = getIntent().getParcelableExtra(BET_EVENT_EXTRA);
-        game = event.game;
 
         // Toolbar
         setSupportActionBar(toolbar);
@@ -45,20 +35,12 @@ public class BetActivity extends BaseActivity {
         toolbar.setTitleTextColor(getResources().getColor(R.color.green_1));
         toolbar.setSubtitleTextColor(getResources().getColor(R.color.green_1));
 
-        final ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setTitle(game.getCircuitRace());
-        }
-
         addFragment();
     }
 
     private void addFragment(){
-        betFragment = new BetFragment();
-        final Bundle bundle = new Bundle();
-        bundle.putParcelable(BetFragment.GAME_EXTRA, game);
-        betFragment.setArguments(bundle);
-        getSupportFragmentManager().beginTransaction().add(R.id.bet_fragment_container, betFragment).commit();
+        gameCreateFragment = new GameCreateFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.game_create_fragment_container, gameCreateFragment).commit();
     }
 
     @Override

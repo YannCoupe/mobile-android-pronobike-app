@@ -1,13 +1,22 @@
 package fr.ycoupe.pronobike.activities;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
+import com.jakewharton.rxbinding.view.RxView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import fr.ycoupe.pronobike.R;
 import fr.ycoupe.pronobike.adapter.ViewPagerAdapter;
 import fr.ycoupe.pronobike.authentication.service.ProfileManager;
@@ -32,9 +41,20 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     private int gameTabPosition;
     private int rankTabPosition;
 
-    private ViewPager viewPager;
     private ViewPagerAdapter adapter;
-    private TabLayout tabLayout;
+
+    @BindView(R.id.main_viewpager)
+    ViewPager viewPager;
+    @BindView(R.id.main_navbar_tablayout)
+    TabLayout tabLayout;
+    @BindView(R.id.main_fab_menu)
+    FloatingActionsMenu fabMenu;
+    @BindView(R.id.main_fab_create)
+    FloatingActionButton fabCreate;
+    @BindView(R.id.main_fab_join)
+    FloatingActionButton fabJoin;
+    @BindView(R.id.main_fab_rules)
+    FloatingActionButton fabRules;
 
     private RankFragment rankFragment;
     private GameFragment gameFragment;
@@ -46,9 +66,9 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         Logger.log(Logger.Level.DEBUG, TAG, "onCreate");
 
         setContentView(R.layout.main_activity);
+        ButterKnife.bind(this);
 
         // View Pager
-        viewPager = (ViewPager) findViewById(R.id.main_viewpager);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         // Handling configuration changes (language, etc..)
@@ -67,7 +87,6 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         viewPager.setPageMarginDrawable(R.color.gray);
 
         // Tab Layout
-        tabLayout = (TabLayout) findViewById(R.id.main_navbar_tablayout);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setOnTabSelectedListener(this);
         addTabs();
@@ -78,6 +97,27 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         viewPager.addOnPageChangeListener(this);
 
         subscriptions.add(BusManager.instance().observe(GameOpenEvent.class, this::onGameOpened));
+
+        RxView.clicks(fabRules).subscribe(next -> rules());
+        RxView.clicks(fabJoin).subscribe(next -> join());
+        RxView.clicks(fabCreate).subscribe(next -> create());
+
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event){
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            if (fabMenu.isExpanded()) {
+
+                Rect outRect = new Rect();
+                fabMenu.getGlobalVisibleRect(outRect);
+
+                if(!outRect.contains((int)event.getRawX(), (int)event.getRawY()))
+                    fabMenu.collapse();
+            }
+        }
+
+        return super.dispatchTouchEvent(event);
     }
 
     private void addTabs() {
@@ -210,6 +250,24 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         setProfileVisible(position == profileTabPosition);
         setRankVisible(position == rankTabPosition);
         setGameVisible(position == gameTabPosition);
+    }
+
+    // =============================================================================================
+    // Fab actions
+
+    private void rules(){
+        final Intent intent = new Intent(this, RulesActivity.class);
+        startActivity(intent);
+    }
+
+    private void join(){
+        final Intent intent = new Intent(this, JoinActivity.class);
+        startActivity(intent);
+    }
+
+    private void create(){
+        final Intent intent = new Intent(this, GameCreateActivity.class);
+        startActivity(intent);
     }
 
     @Override

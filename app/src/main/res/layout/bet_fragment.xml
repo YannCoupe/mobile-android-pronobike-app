@@ -13,9 +13,21 @@
 
         <TextView style="@style/bet_rank_third" />
 
+        <android.support.v7.widget.AppCompatButton
+            style="@style/bet_button_send"/>
     </LinearLayout>
 
-    <android.support.v7.widget.AppCompatButton
-        style="@style/bet_button_send"/>
+
+    <!-- loading layout -->
+    <RelativeLayout
+        style="@style/bet_loader_parent">
+
+        <View
+            style="@style/auth_loader_view"/>
+
+        <ProgressBar
+            style="@style/auth_loader_progress"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
