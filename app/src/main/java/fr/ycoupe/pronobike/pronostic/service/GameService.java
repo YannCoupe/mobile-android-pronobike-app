@@ -17,6 +17,8 @@ import fr.ycoupe.pronobike.pronostic.bus.out.GameDeletedFailedEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.GameDeletedSuccessEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.JoinFailedEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.JoinSuccessEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.PronosticsFailedEvent;
+import fr.ycoupe.pronobike.pronostic.bus.out.PronosticsSuccessEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.RankFailedEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.RankSuccessEvent;
 import fr.ycoupe.pronobike.utils.BusManager;
@@ -194,7 +196,7 @@ public class GameService {
      * @param competition The {@link Competition}
      */
     public void create(final String name, final Competition competition) {
-        Logger.log(Logger.Level.DEBUG, TAG, "join");
+        Logger.log(Logger.Level.DEBUG, TAG, "create");
 
         gameApi.create(ProfileManager.instance().profile.getIdUser(), name, competition.getIdCompetition())
                 .subscribeOn(Schedulers.newThread())
@@ -218,6 +220,39 @@ public class GameService {
         Logger.log(Logger.Level.DEBUG, TAG, "onCreateFailed");
 
         final GameCreatedFailedEvent event = new GameCreatedFailedEvent();
+        BusManager.instance().send(event);
+    }
+
+    /**
+     * Get list of all previous pronostics
+     *
+     * @param idGame The game identifiant
+     */
+    public void pronostics(final int idGame) {
+        Logger.log(Logger.Level.DEBUG, TAG, "pronostics");
+
+        gameApi.pronostics(idGame)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        p -> onPronosticsSuccess(p),
+                        this::onPronosticsFailed
+                );
+    }
+
+    private void onPronosticsSuccess(final JsonElement element) {
+        Logger.log(Logger.Level.DEBUG, TAG, "onPronosticsSuccess");
+
+        final PronosticsSuccessEvent event = new PronosticsSuccessEvent();
+        event.element = element;
+        BusManager.instance().send(event);
+    }
+
+
+    private void onPronosticsFailed(final Throwable error) {
+        Logger.log(Logger.Level.DEBUG, TAG, "onPronosticsFailed");
+
+        final PronosticsFailedEvent event = new PronosticsFailedEvent();
         BusManager.instance().send(event);
     }
 }

@@ -169,7 +169,7 @@ public class GameDetailFragment extends Fragment {
 
     private void showError(final String error){
         new AlertDialog.Builder(getActivity())
-                .setTitle(getString(R.string.pronostic))
+                .setTitle(getString(R.string.suppression_partie))
                 .setMessage(error)
                 .setNeutralButton(android.R.string.ok, (DialogInterface dialog, int which) -> {
                     dialog.cancel();

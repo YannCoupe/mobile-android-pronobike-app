@@ -17,6 +17,8 @@
     <string name="creer_partie_desc">"Créer une partie afin de pronostiquer sur les podiums des plus grandes compétitions de motocyclisme :"</string>
     <string name="creer_partie_ou_rejoindre">"Créez votre partie ou rejoinez en une !"</string>
     <string name="deja_inscris">"Vous êtes déjà inscrit dans cette partie."</string>
+    <string name="derniers_pronostics">"Derniers pronostics"</string>
+    <string name="derniers_pronostics_desc">"Voici la liste des pronostics du GP %s :"</string>
     <string name="email">"Email"</string>
     <string name="email_non_valide">"Votre adresse e-mail n'est pas valide."</string>
     <string name="envoi_impossible">"Envoi impossible"</string>
@@ -49,6 +51,8 @@
     <string name="prochain_gp">"Prochain GP : %s"</string>
     <string formatted="false" name="prochain_gp_le">"Prochain GP : %s le %s"</string>
     <string name="pronostic">"Pronostic"</string>
+    <string formatted="false" name="pronostic_classement">"%d %s - %d %s - %d %s"</string>
+    <plurals name="pronostic_point"><item quantity="zero">"%d pt"</item><item quantity="one">"%d pt"</item><item quantity="other">"%d pts"</item></plurals>
     <string name="pronostiquer">"Pronostiquer"</string>
     <string name="pronostiquer_prochaine_course">"Pronostiquer la prochaine course"</string>
     <string name="rang">"Rang"</string>

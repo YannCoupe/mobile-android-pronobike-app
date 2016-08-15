@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    style="@style/pronostics">
+
+    <LinearLayout
+        style="@style/pronostics_content">
+
+        <TextView style="@style/pronostics_title" />
+
+        <android.support.v7.widget.RecyclerView
+            style="@style/pronostics_recycler" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        style="@style/pronostics_loader_parent">
+
+        <ProgressBar
+            style="@style/auth_loader_progress"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -69,6 +69,8 @@ public class BetFragment extends Fragment {
 
     private GameService gameService;
 
+    private boolean isBlocked = false;
+
     @Override
     public void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,6 +107,7 @@ public class BetFragment extends Fragment {
 
         if(gameDate != null && gameDate.getTime() < System.currentTimeMillis()){
             send.setVisibility(View.GONE);
+            isBlocked = true;
         }
 
         if(pronostic != null){
@@ -128,7 +131,7 @@ public class BetFragment extends Fragment {
      * @param index the textfield number
      */
     private void pilot(final int index){
-        if(pilots == null || pilots.size() == 0) return;
+        if(isBlocked || (pilots == null || pilots.size() == 0)) return;
         String [] array = new String[pilots.size()];
         for(int i = 0; i < pilots.size(); i++){
             array[i] = pilots.get(i).getNumber() + " " + pilots.get(i).getFirstname() + " " + pilots.get(i).getLastname();

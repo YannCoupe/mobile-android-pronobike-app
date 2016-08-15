@@ -87,4 +87,15 @@ public interface GameApi {
             @Field("id_user") final int idUser,
             @Field("name") final String name,
             @Field("id_competition") final int competitionId);
+
+    /**
+     * Get list of previous pronostics
+     *
+     * @param idGame game identifiant
+     * @return list of previous pronostics
+     */
+    @FormUrlEncoded
+    @POST("/pronostics")
+    Observable<JsonElement> pronostics(
+            @Field("id_game") final int idGame);
 }

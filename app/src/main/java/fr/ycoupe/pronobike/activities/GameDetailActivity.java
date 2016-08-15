@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ImageButton;
+
+import com.jakewharton.rxbinding.view.RxView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +30,8 @@ public class GameDetailActivity extends BaseActivity {
 
     @BindView(R.id.game_detail_toolbar)
     Toolbar toolbar;
+    @BindView(R.id.game_detail_list)
+    ImageButton list;
 
     private Game game;
 
@@ -56,9 +61,17 @@ public class GameDetailActivity extends BaseActivity {
 
         addFragment();
 
+        RxView.clicks(list).subscribe(next -> list());
+
         subscriptions.add(BusManager.instance().observe(BetOpenedEvent.class, this::onBetOpened));
         subscriptions.add(BusManager.instance().observe(GameCloseEvent.class, this::onClosed));
 
+    }
+
+    private void list(){
+        final Intent intent = new Intent(this, PronosticsActivity.class);
+        intent.putExtra(PronosticsActivity.PRONOSTICS_GAME_EXTRA, game);
+        startActivity(intent);
     }
 
     private void addFragment(){

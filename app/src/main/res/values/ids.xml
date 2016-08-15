@@ -58,6 +58,8 @@
     <item name="game_item_circuit" type="id" />
     <item name="game_item_date" type="id" />
 
+
+    <item name="game_detail_list" type="id" />
     <item name="game_detail_toolbar" type="id" />
     <item name="game_detail_fragment_container" type="id" />
     <item name="game_detail_bottom" type="id" />
@@ -99,5 +101,15 @@
     <item name="join_edittext" type="id" />
     <item name="join_button_send" type="id" />
     <item name="join_loader" type="id" />
+
+    <item name="pronostics_toolbar" type="id" />
+    <item name="pronostics_fragment_container" type="id" />
+    <item name="pronostics_loader" type="id" />
+    <item name="pronostics_title" type="id" />
+    <item name="pronostics_recycler" type="id" />
+
+    <item name="pronostic_item_name" type="id" />
+    <item name="pronostic_item_point" type="id" />
+    <item name="pronostic_item_pilots" type="id" />
 
 </resources>
