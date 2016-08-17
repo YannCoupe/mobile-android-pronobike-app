@@ -4,8 +4,12 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import fr.ycoupe.pronobike.App;
 import fr.ycoupe.pronobike.R;
 import fr.ycoupe.pronobike.pronostic.GameCreateFragment;
 import fr.ycoupe.pronobike.utils.Logger;
@@ -54,6 +58,17 @@ public class GameCreateActivity extends BaseActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Obtain the shared Tracker instance.
+        final App application = (App) getApplication();
+        final Tracker tracker = application.getDefaultTracker();
+
+        tracker.setScreenName(TAG);
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
 }

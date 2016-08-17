@@ -7,10 +7,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.jakewharton.rxbinding.view.RxView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import fr.ycoupe.pronobike.App;
 import fr.ycoupe.pronobike.R;
 import fr.ycoupe.pronobike.models.Game;
 import fr.ycoupe.pronobike.pronostic.GameDetailFragment;
@@ -109,6 +112,17 @@ public class GameDetailActivity extends BaseActivity {
     private void onClosed(final GameCloseEvent event) {
         Logger.log(Logger.Level.DEBUG, TAG, "onClosed");
         finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Obtain the shared Tracker instance.
+        final App application = (App) getApplication();
+        final Tracker tracker = application.getDefaultTracker();
+
+        tracker.setScreenName(TAG);
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
 }

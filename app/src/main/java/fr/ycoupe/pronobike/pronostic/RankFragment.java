@@ -12,33 +12,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.google.gson.JsonElement;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.ycoupe.pronobike.R;
 import fr.ycoupe.pronobike.authentication.service.ProfileManager;
-import fr.ycoupe.pronobike.authentication.service.ProfileService;
-import fr.ycoupe.pronobike.models.Game;
 import fr.ycoupe.pronobike.models.RankGame;
-import fr.ycoupe.pronobike.models.User;
 import fr.ycoupe.pronobike.profile.bus.out.RefreshEvent;
-import fr.ycoupe.pronobike.pronostic.adapter.GameListAdapter;
-import fr.ycoupe.pronobike.pronostic.adapter.GameRecyclerView;
 import fr.ycoupe.pronobike.pronostic.adapter.RankListAdapter;
-import fr.ycoupe.pronobike.pronostic.bus.out.GameDeletedFailedEvent;
-import fr.ycoupe.pronobike.pronostic.bus.out.GameDeletedSuccessEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.RankFailedEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.RankSuccessEvent;
-import fr.ycoupe.pronobike.pronostic.bus.out.UserRequestFailedEvent;
-import fr.ycoupe.pronobike.pronostic.bus.out.UserRequestSuccessEvent;
 import fr.ycoupe.pronobike.pronostic.service.GameService;
 import fr.ycoupe.pronobike.sqlite.GameDAO;
 import fr.ycoupe.pronobike.utils.BusManager;

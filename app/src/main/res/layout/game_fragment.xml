@@ -7,7 +7,7 @@
 
         <FrameLayout style="@style/game_parent">
 
-            <fr.ycoupe.pronobike.pronostic.adapter.GameRecyclerView
+            <fr.ycoupe.pronobike.pronostic.adapter.EmptyRecyclerView
                 style="@style/game_list"/>
 
             <include

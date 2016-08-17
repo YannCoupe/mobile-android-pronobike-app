@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "563298102388",
+    "project_id": "firebase-pronobike"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563298102388:android:b433a68c08ad9009",
+        "android_client_info": {
+          "package_name": "fr.ycoupe.pronobike"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr2-UljAKJK9e-wqbGHJGdSjdjSk3ulrs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-82667002-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

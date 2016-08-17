@@ -107,6 +107,7 @@
     <item name="pronostics_loader" type="id" />
     <item name="pronostics_title" type="id" />
     <item name="pronostics_recycler" type="id" />
+    <item name="pronostic_empty" type="id" />
 
     <item name="pronostic_item_name" type="id" />
     <item name="pronostic_item_point" type="id" />

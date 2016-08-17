@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,21 +12,19 @@ import android.widget.TextView;
 
 import com.google.gson.JsonElement;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.ycoupe.pronobike.R;
-import fr.ycoupe.pronobike.authentication.service.ProfileManager;
 import fr.ycoupe.pronobike.models.Game;
+import fr.ycoupe.pronobike.pronostic.adapter.EmptyRecyclerView;
 import fr.ycoupe.pronobike.pronostic.adapter.PronosticListAdapter;
 import fr.ycoupe.pronobike.pronostic.bus.out.PronosticsFailedEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.PronosticsSuccessEvent;
 import fr.ycoupe.pronobike.pronostic.service.GameService;
-import fr.ycoupe.pronobike.sqlite.GameDAO;
 import fr.ycoupe.pronobike.utils.BusManager;
 import fr.ycoupe.pronobike.utils.Logger;
 import rx.internal.util.SubscriptionList;
@@ -43,7 +40,7 @@ public class PronosticsFragment extends Fragment {
     @BindView(R.id.pronostics_title)
     TextView title;
     @BindView(R.id.pronostics_recycler)
-    RecyclerView recyclerView;
+    EmptyRecyclerView recyclerView;
     @BindView(R.id.pronostics_loader)
     RelativeLayout loader;
 
@@ -69,6 +66,8 @@ public class PronosticsFragment extends Fragment {
         final View view = inflater.inflate(R.layout.pronostics_fragment, group, false);
         ButterKnife.bind(this, view);
 
+        title.setVisibility(View.GONE);
+
         gameService = new GameService();
 
         game = getArguments().getParcelable(GAME_EXTRA);
@@ -79,6 +78,7 @@ public class PronosticsFragment extends Fragment {
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        recyclerView.setEmptyView(view.findViewById(R.id.pronostic_empty));
 
         subscriptions = new SubscriptionList();
         subscriptions.add(BusManager.instance().observe(PronosticsSuccessEvent.class, this::onPronosticsSuccess));
@@ -100,21 +100,23 @@ public class PronosticsFragment extends Fragment {
                         int status = list.getInt("status");
                         if (status == 0) {
                             title.setText(String.format(getString(R.string.derniers_pronostics_desc), list.getString("circuit")));
-                                if (pronosticListAdapter == null) {
-                                    return;
-                                }
-                                pronosticListAdapter.setPronostics(list.getJSONArray("pronostics"));
-                                recyclerView.setAdapter(pronosticListAdapter);
-                            return;
-                        } else if (status == 1) {
-                            return;
-                        } else if (status == 2) {
+                            if (pronosticListAdapter == null) {
+                                return;
+                            }
+
+                            final int[] ranks = new int[3];
+                            ranks[0] = list.getInt("first");
+                            ranks[1] = list.getInt("second");
+                            ranks[2] = list.getInt("third");
+
+                            title.setVisibility(View.VISIBLE);
+                            pronosticListAdapter.setPronostics(list.getJSONArray("pronostics"), ranks);
+                            recyclerView.setAdapter(pronosticListAdapter);
                             return;
                         }
                     }
-                } else {
-
                 }
+                recyclerView.setAdapter(pronosticListAdapter);
             }
         } catch (JSONException e){
             Logger.log(Logger.Level.WARNING, TAG, "JSONException: " + e);
@@ -125,6 +127,7 @@ public class PronosticsFragment extends Fragment {
     private void onPronosticsFailed(final PronosticsFailedEvent event) {
         Logger.log(Logger.Level.DEBUG, TAG, "onPronosticsFailed");
         showLoader(false);
+        recyclerView.setAdapter(pronosticListAdapter);
     }
 
     @Override

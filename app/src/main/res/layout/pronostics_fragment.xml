@@ -7,8 +7,16 @@
 
         <TextView style="@style/pronostics_title" />
 
-        <android.support.v7.widget.RecyclerView
-            style="@style/pronostics_recycler" />
+        <FrameLayout style="@style/pronostics">
+
+            <fr.ycoupe.pronobike.pronostic.adapter.EmptyRecyclerView
+                style="@style/pronostics_recycler" />
+
+            <include
+                style="@style/pronostic_empty"
+                layout="@layout/pronostic_emptyview" />
+
+        </FrameLayout>
 
     </LinearLayout>
 

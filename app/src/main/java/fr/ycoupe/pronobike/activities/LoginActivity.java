@@ -3,6 +3,10 @@ package fr.ycoupe.pronobike.activities;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
+import fr.ycoupe.pronobike.App;
 import fr.ycoupe.pronobike.authentication.LoginFragment;
 import fr.ycoupe.pronobike.authentication.bus.out.AuthenticationSuccessEvent;
 import fr.ycoupe.pronobike.authentication.bus.out.CreateEvent;
@@ -50,6 +54,17 @@ public class LoginActivity extends BaseActivity {
         Logger.log(Logger.Level.DEBUG, TAG, "showCreate");
 
         startActivity(new Intent(LoginActivity.this, CreateActivity.class));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Obtain the shared Tracker instance.
+        final App application = (App) getApplication();
+        final Tracker tracker = application.getDefaultTracker();
+
+        tracker.setScreenName(TAG);
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
 }

@@ -2,6 +2,10 @@ package fr.ycoupe.pronobike.activities;
 
 import android.os.Bundle;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
+import fr.ycoupe.pronobike.App;
 import fr.ycoupe.pronobike.authentication.ForgetFragment;
 import fr.ycoupe.pronobike.authentication.bus.out.ForgetSuccessEvent;
 import fr.ycoupe.pronobike.utils.BusManager;
@@ -29,6 +33,17 @@ public class ForgetActivity extends BaseActivity {
     private void onForgetSuccessEvent(final ForgetSuccessEvent event) {
         Logger.log(Logger.Level.DEBUG, TAG, "onForgetSuccessEvent");
         finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Obtain the shared Tracker instance.
+        final App application = (App) getApplication();
+        final Tracker tracker = application.getDefaultTracker();
+
+        tracker.setScreenName(TAG);
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
 }

@@ -9,10 +9,10 @@ import android.view.View;
  * Customisation of {@link RecyclerView} for managing an empty state
  * Inspired by : https://gist.github.com/adelnizamutdinov/31c8f054d1af4588dc5c#file-emptyrecyclerview-java
  */
-public class GameRecyclerView extends RecyclerView {
-    private final static String TAG = GameRecyclerView.class.getSimpleName();
+public class EmptyRecyclerView extends RecyclerView {
+    private final static String TAG = EmptyRecyclerView.class.getSimpleName();
 
-    private View gameEmptyView;
+    private View emptyView;
 
     private final AdapterDataObserver observer = new AdapterDataObserver() {
         @Override
@@ -52,15 +52,15 @@ public class GameRecyclerView extends RecyclerView {
         }
     };
 
-    public GameRecyclerView(final Context context) {
+    public EmptyRecyclerView(final Context context) {
         super(context);
     }
 
-    public GameRecyclerView(final Context context, final AttributeSet attrs) {
+    public EmptyRecyclerView(final Context context, final AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public GameRecyclerView(final Context context, final AttributeSet attrs, final int defStyle) {
+    public EmptyRecyclerView(final Context context, final AttributeSet attrs, final int defStyle) {
         super(context, attrs, defStyle);
     }
 
@@ -80,10 +80,10 @@ public class GameRecyclerView extends RecyclerView {
     /**
      * Set the view to be shown when {@link RecyclerView} is empty.
      *
-     * @param gameEmptyView The empty view.
+     * @param emptyView The empty view.
      */
-    public void setGameEmptyView(final View gameEmptyView) {
-        this.gameEmptyView = gameEmptyView;
+    public void setEmptyView(final View emptyView) {
+        this.emptyView = emptyView;
     }
 
     private void checkSize() {
@@ -94,8 +94,8 @@ public class GameRecyclerView extends RecyclerView {
 
         final int count = getAdapter().getItemCount();
 
-        if(gameEmptyView != null){
-            gameEmptyView.setVisibility(count > 0 ? View.GONE : View.VISIBLE);
+        if(emptyView != null){
+            emptyView.setVisibility(count > 0 ? View.GONE : View.VISIBLE);
         }
     }
 }

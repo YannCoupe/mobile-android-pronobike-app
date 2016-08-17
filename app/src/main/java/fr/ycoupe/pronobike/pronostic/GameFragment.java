@@ -29,7 +29,7 @@ import fr.ycoupe.pronobike.models.Game;
 import fr.ycoupe.pronobike.models.User;
 import fr.ycoupe.pronobike.profile.bus.out.RefreshEvent;
 import fr.ycoupe.pronobike.pronostic.adapter.GameListAdapter;
-import fr.ycoupe.pronobike.pronostic.adapter.GameRecyclerView;
+import fr.ycoupe.pronobike.pronostic.adapter.EmptyRecyclerView;
 import fr.ycoupe.pronobike.pronostic.bus.out.UserRequestFailedEvent;
 import fr.ycoupe.pronobike.pronostic.bus.out.UserRequestSuccessEvent;
 import fr.ycoupe.pronobike.sqlite.GameDAO;
@@ -50,7 +50,7 @@ public class GameFragment extends Fragment {
     private GameListAdapter gameListAdapter;
 
     @BindView(R.id.game_list)
-    GameRecyclerView recyclerView;
+    EmptyRecyclerView recyclerView;
     @BindView(R.id.game_refresh)
     SwipeRefreshLayout refreshLayout;
     @BindView(R.id.game_loader)
@@ -88,7 +88,7 @@ public class GameFragment extends Fragment {
         gameListAdapter = new GameListAdapter(getActivity());
 
         recyclerView.setHasFixedSize(true);
-        recyclerView.setGameEmptyView(view.findViewById(R.id.game_empty));
+        recyclerView.setEmptyView(view.findViewById(R.id.game_empty));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
         // Trick to enable pull to refresh only when the the first item is visible.

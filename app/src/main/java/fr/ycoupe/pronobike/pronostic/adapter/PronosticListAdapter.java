@@ -16,9 +16,8 @@ import fr.ycoupe.pronobike.R;
  */
 public class PronosticListAdapter extends RecyclerView.Adapter<PronosticViewHolder> {
 
-    private final static String TAG = PronosticListAdapter.class.getSimpleName();
-
     private JSONArray pronostics;
+    private int[] ranks;
 
     private Context context;
 
@@ -35,7 +34,7 @@ public class PronosticListAdapter extends RecyclerView.Adapter<PronosticViewHold
 
     @Override
     public void onBindViewHolder(final PronosticViewHolder holder, final int position) {
-        holder.bind(context, getItem(position));
+        holder.bind(context, getItem(position), ranks);
     }
 
     @Override
@@ -60,8 +59,9 @@ public class PronosticListAdapter extends RecyclerView.Adapter<PronosticViewHold
         return pronostics == null ? 0 : pronostics.length();
     }
 
-    public void setPronostics(final JSONArray array) {
+    public void setPronostics(final JSONArray array, final int [] rankArray) {
         pronostics = array;
+        ranks = rankArray;
         notifyDataSetChanged();
     }
 }

@@ -13,10 +13,13 @@ import android.widget.LinearLayout;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.jakewharton.rxbinding.view.RxView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import fr.ycoupe.pronobike.App;
 import fr.ycoupe.pronobike.R;
 import fr.ycoupe.pronobike.adapter.ViewPagerAdapter;
 import fr.ycoupe.pronobike.authentication.service.ProfileManager;
@@ -174,6 +177,13 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         super.onResume();
         Logger.log(Logger.Level.DEBUG, TAG, "onResume");
         updatePage(tabLayout.getSelectedTabPosition());
+
+        // Obtain the shared Tracker instance.
+        final App application = (App) getApplication();
+        final Tracker tracker = application.getDefaultTracker();
+
+        tracker.setScreenName(TAG);
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
 
         if (ProfileManager.instance() == null) {
             Logger.log(Logger.Level.WARNING, TAG, "Profile instance is null");

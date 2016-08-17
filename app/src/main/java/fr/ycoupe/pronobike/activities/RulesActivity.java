@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -20,6 +22,7 @@ import java.io.InputStreamReader;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import fr.ycoupe.pronobike.App;
 import fr.ycoupe.pronobike.R;
 import fr.ycoupe.pronobike.utils.Logger;
 import fr.ycoupe.pronobike.utils.StringUtils;
@@ -121,5 +124,16 @@ public class RulesActivity extends BaseActivity {
             public String title;
             public String text;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Obtain the shared Tracker instance.
+        final App application = (App) getApplication();
+        final Tracker tracker = application.getDefaultTracker();
+
+        tracker.setScreenName(TAG);
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 }

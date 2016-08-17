@@ -25,6 +25,20 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
+    <style name="pronostic_empty" parent="empty_parent">
+        <item name="android:id">@id/pronostic_empty</item>
+    </style>
+
+    <style name="pronostic_emptyview_image" parent="empty_image">
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">160dp</item>
+        <item name="android:background">@drawable/pronostic_empty</item>
+    </style>
+
+    <style name="pronostic_emptyview_headline" parent="empty_headline">
+        <item name="android:text">@string/derniers_pronostics_impossible</item>
+    </style>
+
     <style name="pronostics_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

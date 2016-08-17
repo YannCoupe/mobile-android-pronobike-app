@@ -2,6 +2,10 @@ package fr.ycoupe.pronobike.activities;
 
 import android.os.Bundle;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
+import fr.ycoupe.pronobike.App;
 import fr.ycoupe.pronobike.authentication.CreateFragment;
 import fr.ycoupe.pronobike.authentication.bus.out.AuthenticationSuccessEvent;
 import fr.ycoupe.pronobike.authentication.bus.out.CreateSuccessEvent;
@@ -29,5 +33,16 @@ public class CreateActivity extends BaseActivity {
         Logger.log(Logger.Level.DEBUG, TAG, "onCreateSuccessEvent");
         BusManager.instance().send(new AuthenticationSuccessEvent());
         finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Obtain the shared Tracker instance.
+        final App application = (App) getApplication();
+        final Tracker tracker = application.getDefaultTracker();
+
+        tracker.setScreenName(TAG);
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 }
