@@ -23,6 +23,7 @@
     <style name="pronostics">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/whisper</item>
     </style>
 
     <style name="pronostic_empty" parent="empty_parent">

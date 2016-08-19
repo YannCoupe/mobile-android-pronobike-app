@@ -33,6 +33,7 @@ import fr.ycoupe.pronobike.pronostic.service.GameService;
 import fr.ycoupe.pronobike.sqlite.GameDAO;
 import fr.ycoupe.pronobike.utils.BusManager;
 import fr.ycoupe.pronobike.utils.Logger;
+import fr.ycoupe.pronobike.utils.StringUtils;
 import rx.internal.util.SubscriptionList;
 
 /**
@@ -83,8 +84,11 @@ public class GameDetailFragment extends Fragment {
         game = getArguments().getParcelable(GAME_EXTRA);
 
         final boolean isAdmin = game.getAdmin() == 1;
+        final boolean hasNextGp = !StringUtils.isNullOrEmpty(game.getDateRace()) && !StringUtils.isNullOrEmpty(game.getCircuitRace());
+
         divider.setVisibility(isAdmin ? View.VISIBLE : View.GONE);
         delete.setVisibility(isAdmin ? View.VISIBLE : View.GONE);
+        bet.setVisibility(hasNextGp ? View.VISIBLE : View.GONE);
 
         title.setText(String.format(getResources().getString(R.string.token_partie), game.getToken()));
 

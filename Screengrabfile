@@ -1,0 +1,17 @@
+# remove the leading '#' to uncomment lines
+
+app_package_name 'fr.ycoupe.pronobike'
+use_tests_in_packages ['fr.ycoupe.pronobike.test']
+
+app_apk_path 'app/build/outputs/apk/app-debug.apk'
+tests_apk_path 'app/build/outputs/apk/app-debug-androidTest-unaligned.apk'
+
+locales ['en-GB', 'fr-FR']
+
+# clear all previously generated screenshots in your local output directory before creating new ones
+# clear_previous_screenshots true
+
+# For more information about all available options run
+#   screengrab --help
+
+output_directory '/Users/yanncoupe/Desktop'

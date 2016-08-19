@@ -3,9 +3,6 @@ package fr.ycoupe.pronobike.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import fr.ycoupe.pronobike.utils.Logger;
 
 /**

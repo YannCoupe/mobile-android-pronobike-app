@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.google.gson.JsonElement;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 

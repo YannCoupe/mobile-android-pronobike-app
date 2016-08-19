@@ -28,7 +28,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.ycoupe.pronobike.R;
 import fr.ycoupe.pronobike.activities.LoginActivity;
-import fr.ycoupe.pronobike.authentication.bus.out.CreateSuccessEvent;
 import fr.ycoupe.pronobike.authentication.service.ProfileManager;
 import fr.ycoupe.pronobike.authentication.service.ProfileService;
 import fr.ycoupe.pronobike.models.User;

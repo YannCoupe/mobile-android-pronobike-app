@@ -3,21 +3,15 @@ package fr.ycoupe.pronobike.pronostic.adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 import fr.ycoupe.pronobike.R;
 import fr.ycoupe.pronobike.authentication.service.ProfileManager;
-import fr.ycoupe.pronobike.models.Game;
 import fr.ycoupe.pronobike.models.RankGame;
 import fr.ycoupe.pronobike.utils.Logger;
-import fr.ycoupe.pronobike.utils.StringUtils;
 
 /**
  * {@link RecyclerView.ViewHolder} for the {@link fr.ycoupe.pronobike.models.RankGame} object inside

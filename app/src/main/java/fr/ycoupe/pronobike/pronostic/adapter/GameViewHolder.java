@@ -35,7 +35,7 @@ public class GameViewHolder extends RecyclerView.ViewHolder {
     public GameViewHolder(final View v) {
         super(v);
         view = v;
-        dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.FRANCE);
+        dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     }
 
     /**
@@ -80,8 +80,8 @@ public class GameViewHolder extends RecyclerView.ViewHolder {
 
             String dateString = "";
             if(raceDate != null){
-                dateFormatter = new SimpleDateFormat("EEEE dd MMMM yyyy 'à' HH'h'mm", Locale.FRANCE);
-                dateString = String.format("Le %s", dateFormatter.format(raceDate));
+                dateFormatter = new SimpleDateFormat("EEEE dd MMMM yyyy '-' HH':'mm");
+                dateString = String.format("%s", dateFormatter.format(raceDate));
             }
             date.setText(dateString);
             circuit.setText(String.format(context.getResources().getString(R.string.prochain_gp), item.getCircuitRace()));
