@@ -1,0 +1,29 @@
+<resources>
+
+    <style name="splash_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">44sp</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="fontPath">fonts/ShadowsIntoLightTwo-Regular.ttf</item>
+    </style>
+
+    <style name="splash_version">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">@dimen/padding</item>
+        <item name="android:id">@id/splash_version</item>
+    </style>
+
+</resources>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="splash_version" type="id" />
+
+    <item name="auth_edittext_email" type="id" />
+    <item name="auth_edittext_password" type="id" />
+    <item name="auth_button_connect" type="id" />
+    <item name="auth_button_create" type="id" />
+    <item name="auth_button_forget" type="id" />
+    <item name="auth_loader" type="id" />
+
+    <item name="forget_edittext_email" type="id" />
+    <item name="forget_button_send" type="id" />
+    <item name="forget_loader" type="id" />
+
+    <item name="create_edittext_email" type="id" />
+    <item name="create_edittext_password" type="id" />
+    <item name="create_edittext_confirm" type="id" />
+    <item name="create_edittext_firstname" type="id" />
+    <item name="create_edittext_lastname" type="id" />
+    <item name="create_button_send" type="id" />
+    <item name="create_loader" type="id" />
+
+    <item name="profile_edittext_email" type="id" />
+    <item name="profile_edittext_password" type="id" />
+    <item name="profile_edittext_confirm" type="id" />
+    <item name="profile_edittext_firstname" type="id" />
+    <item name="profile_edittext_lastname" type="id" />
+    <item name="profile_button_send" type="id" />
+    <item name="profile_loader" type="id" />
+
+    <item name="tabview_icon" type="id" />
+    <item name="main_toolbar" type="id" />
+    <item name="main_tabs_parent" type="id" />
+    <item name="main_viewpager" type="id" />
+    <item name="main_navbar_logo" type="id" />
+    <item name="main_navbar_tablayout" type="id" />
+    <item name="main_fab_menu" type="id" />
+    <item name="main_fab_rules" type="id" />
+    <item name="main_fab_create" type="id" />
+    <item name="main_fab_join" type="id" />
+
+    <item name="rules_toolbar" type="id" />
+    <item name="rules_container" type="id" />
+    <item name="rule_item_title" type="id" />
+    <item name="rule_item_text" type="id" />
+
+    <item name="game_loader" type="id" />
+    <item name="game_tablayout" type="id" />
+    <item name="game_refresh" type="id" />
+    <item name="game_list" type="id" />
+    <item name="game_list_empty" type="id" />
+    <item name="game_empty" type="id" />
+
+    <item name="game_item_rank" type="id" />
+    <item name="game_item_name" type="id" />
+    <item name="game_item_competition" type="id" />
+    <item name="game_item_circuit" type="id" />
+    <item name="game_item_date" type="id" />
+
+
+    <item name="game_detail_list" type="id" />
+    <item name="game_detail_toolbar" type="id" />
+    <item name="game_detail_fragment_container" type="id" />
+    <item name="game_detail_bottom" type="id" />
+    <item name="game_detail_button_bet" type="id" />
+    <item name="game_detail_button_delete" type="id" />
+    <item name="game_detail_button_divider" type="id" />
+    <item name="game_detail_title" type="id" />
+    <item name="game_detail_recycler" type="id" />
+    <item name="game_detail_loader" type="id" />
+
+    <item name="game_create_fragment_container" type="id" />
+    <item name="game_create_competition" type="id" />
+    <item name="game_create_name" type="id" />
+    <item name="game_create_button_send" type="id" />
+    <item name="game_create_loader" type="id" />
+    <item name="game_create_toolbar" type="id" />
+
+    <item name="rank_item_position" type="id" />
+    <item name="rank_item_name" type="id" />
+    <item name="rank_item_details" type="id" />
+    <item name="rank_item_total" type="id" />
+    <item name="rank_item" type="id" />
+
+    <item name="rank_refresh" type="id" />
+    <item name="rank_loader" type="id" />
+    <item name="rank_list" type="id" />
+    <item name="rank_title" type="id" />
+
+    <item name="bet_toolbar" type="id" />
+    <item name="bet_fragment_container" type="id" />
+    <item name="bet_button_send" type="id" />
+    <item name="bet_rank_first" type="id" />
+    <item name="bet_rank_second" type="id" />
+    <item name="bet_rank_third" type="id" />
+    <item name="bet_loader" type="id" />
+
+    <item name="join_toolbar" type="id" />
+    <item name="join_fragment_container" type="id" />
+    <item name="join_edittext" type="id" />
+    <item name="join_button_send" type="id" />
+    <item name="join_loader" type="id" />
+
+    <item name="pronostics_toolbar" type="id" />
+    <item name="pronostics_fragment_container" type="id" />
+    <item name="pronostics_loader" type="id" />
+    <item name="pronostics_title" type="id" />
+    <item name="pronostics_recycler" type="id" />
+    <item name="pronostic_empty" type="id" />
+
+    <item name="pronostic_item_name" type="id" />
+    <item name="pronostic_item_point" type="id" />
+    <item name="pronostic_item_pilots" type="id" />
+
+</resources>

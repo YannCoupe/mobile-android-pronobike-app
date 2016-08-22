@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Game -->
+    <style name="game_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="game">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/whisper</item>
+    </style>
+
+    <style name="game_refresh">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:id">@id/game_refresh</item>
+    </style>
+
+    <style name="game_list">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:id">@id/game_list</item>
+    </style>
+
+    <style name="empty_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:fillViewport">true</item>
+    </style>
+
+    <style name="game_empty" parent="empty_parent">
+        <item name="android:id">@id/game_empty</item>
+    </style>
+
+    <style name="game_loader">
+        <item name="android:layout_width">@dimen/game_loader</item>
+        <item name="android:layout_height">@dimen/game_loader</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="game_list_loader" parent="game_loader">
+        <item name="android:id">@id/game_loader</item>
+    </style>
+
+    <style name="empty_image">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">160dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:contentDescription">""</item>
+    </style>
+
+    <style name="empty_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="empty_headline" parent="empty_text">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontPath">fonts/ProximaNova-Bold.otf</item>
+    </style>
+
+    <style name="game_emptyview_image" parent="empty_image">
+        <item name="android:background">@drawable/game_empty</item>
+    </style>
+
+    <style name="game_emptyview_headline" parent="empty_headline">
+        <item name="android:text">@string/creer_partie_ou_rejoindre</item>
+    </style>
+
+    <!-- Adapter -->
+    <style name="game_item_card" parent="CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginLeft">@dimen/item_margin</item>
+        <item name="android:layout_marginRight">@dimen/item_margin</item>
+        <item name="cardCornerRadius">3dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="game_item_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="game_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="game_item_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_toLeftOf">@id/game_item_rank</item>
+        <item name="android:layout_marginRight">@dimen/item_margin</item>
+    </style>
+
+    <style name="game_item_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:id">@id/game_item_name</item>
+        <item name="fontPath">fonts/ProximaNova-Semibold.otf</item>
+    </style>
+
+    <style name="game_item_subline">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
+    <style name="game_item_competition" parent="game_item_subline">
+        <item name="android:id">@id/game_item_competition</item>
+    </style>
+
+    <style name="game_item_circuit" parent="game_item_subline">
+        <item name="android:id">@id/game_item_circuit</item>
+    </style>
+
+    <style name="game_item_date" parent="game_item_subline">
+        <item name="android:id">@id/game_item_date</item>
+    </style>
+
+    <style name="game_item_rank">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:id">@id/game_item_rank</item>
+    </style>
+
+    <style name="game_detail_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="game_detail_list">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/tab_list</item>
+        <item name="android:layout_marginRight">@dimen/item_margin</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:id">@id/game_detail_list</item>
+    </style>
+
+    <style name="game_detail_fragment_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:id">@id/game_detail_fragment_container</item>
+    </style>
+
+    <style name="game_detail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="game_detail_bottom">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/padding</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:id">@id/game_detail_bottom</item>
+    </style>
+
+    <style name="game_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@color/green_1</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="game_detail_button_bet" parent="game_button">
+        <item name="android:text">@string/pronostiquer</item>
+        <item name="android:id">@id/game_detail_button_bet</item>
+    </style>
+
+    <style name="game_detail_button_divider">
+        <item name="android:layout_width">@dimen/padding</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:id">@id/game_detail_button_divider</item>
+    </style>
+
+    <style name="game_detail_button_delete" parent="game_button">
+        <item name="android:text">@string/supprimer</item>
+        <item name="android:background">@color/green_2</item>
+        <item name="android:id">@id/game_detail_button_delete</item>
+    </style>
+
+    <style name="game_detail_loader_parent" parent="auth_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:id">@id/game_detail_loader</item>
+    </style>
+
+    <style name="game_detail_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:text">@string/token_partie</item>
+        <item name="android:id">@id/game_detail_title</item>
+    </style>
+
+    <style name="game_detail_recycler">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_below">@id/game_detail_title</item>
+        <item name="android:layout_above">@id/game_detail_bottom</item>
+        <item name="android:id">@id/game_detail_recycler</item>
+    </style>
+
+    <style name="game_create_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="game_create_fragment_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:id">@id/game_create_fragment_container</item>
+    </style>
+
+    <style name="game_create">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="game_create_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="game_create_loader_parent" parent="auth_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:id">@id/game_create_loader</item>
+    </style>
+
+    <style name="game_create_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:text">@string/creer_partie_desc</item>
+    </style>
+
+    <style name="game_create_name" parent="auth_edittext">
+        <item name="android:hint">@string/nom_partie</item>
+        <item name="android:inputType">text|textCapSentences</item>
+        <item name="android:id">@id/game_create_name</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+        <item name="android:layout_marginLeft">@dimen/padding</item>
+        <item name="android:layout_marginRight">@dimen/padding</item>
+    </style>
+
+    <style name="game_create_button_send">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_margin">@dimen/padding</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@color/green_1</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:text">@string/creer</item>
+        <item name="android:id">@id/game_create_button_send</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+    </style>
+
+    <style name="game_create_competition">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_marginLeft">@dimen/padding</item>
+        <item name="android:layout_marginRight">@dimen/padding</item>
+        <item name="android:background">@drawable/background_rank</item>
+        <item name="android:id">@id/game_create_competition</item>
+        <item name="android:text">@string/choix_competition</item>
+        <item name="android:layout_marginTop">@dimen/padding</item>
+    </style>
+
+</resources>

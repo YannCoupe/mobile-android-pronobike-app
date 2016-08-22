@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/game_empty">
+
+    <ImageView style="@style/game_emptyview_image"/>
+
+    <TextView style="@style/game_emptyview_headline"/>
+
+</LinearLayout>

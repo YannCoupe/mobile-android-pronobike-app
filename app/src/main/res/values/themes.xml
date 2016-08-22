@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme -->
+    <style name="common_base_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/green_1</item>
+        <item name="colorPrimaryDark">@color/green_2</item>
+        <item name="colorAccent">@color/green_1</item>
+        <item name="android:windowBackground">@android:color/white</item>
+
+        <item name="colorControlActivated">@color/green_1</item>
+        <item name="colorSwitchThumbNormal">@color/red</item>
+        <item name="android:colorForeground">@color/red_alpha</item>
+    </style>
+
+    <style name="common_app_theme" parent="@style/common_base_theme" />
+
+    <!-- Login page theme -->
+    <style name="login_theme" parent="@style/common_app_theme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+</resources>

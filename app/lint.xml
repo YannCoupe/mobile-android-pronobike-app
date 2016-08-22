@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Disable check on non-Android java calls from used libraries -->
+    <issue id="InvalidPackage">
+        <ignore regexp=".*okio.*" />
+        <ignore regexp=".*retrofit.*" />
+    </issue>
+    <issue id="ImpliedQuantity">
+        <ignore regexp=".strings.xml." />
+    </issue>
+</lint>

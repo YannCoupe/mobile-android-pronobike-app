@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    style="@style/game">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        style="@style/game_refresh">
+
+        <FrameLayout style="@style/game_parent">
+
+            <fr.ycoupe.pronobike.pronostic.adapter.EmptyRecyclerView
+                style="@style/game_list"/>
+
+            <include
+                style="@style/game_empty"
+                layout="@layout/game_emptyview" />
+
+        </FrameLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <ProgressBar style="@style/game_list_loader"/>
+
+</RelativeLayout>

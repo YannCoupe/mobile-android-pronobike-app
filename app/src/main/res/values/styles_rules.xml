@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="rules">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="rules_scroll">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fillViewport">true</item>
+    </style>
+
+    <style name="rules_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:id">@id/rules_container</item>
+        <item name="android:background">@color/swiss_gray</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:divider">@drawable/rules_divider</item>
+        <item name="android:dividerPadding">20dp</item>
+    </style>
+
+    <style name="rule_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="rule_item_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:id">@id/rule_item_title</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="fontPath">fonts/ProximaNova-Bold.otf</item>
+    </style>
+
+    <style name="rule_item_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:id">@id/rule_item_text</item>
+    </style>
+
+</resources>

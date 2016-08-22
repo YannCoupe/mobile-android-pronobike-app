@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="pronostics_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+    <style name="pronostics_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="pronostics_fragment_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:id">@id/pronostics_fragment_container</item>
+    </style>
+
+    <style name="pronostics">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/whisper</item>
+    </style>
+
+    <style name="pronostic_empty" parent="empty_parent">
+        <item name="android:id">@id/pronostic_empty</item>
+    </style>
+
+    <style name="pronostic_emptyview_image" parent="empty_image">
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">160dp</item>
+        <item name="android:background">@drawable/pronostic_empty</item>
+    </style>
+
+    <style name="pronostic_emptyview_headline" parent="empty_headline">
+        <item name="android:text">@string/derniers_pronostics_impossible</item>
+    </style>
+
+    <style name="pronostics_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:text">@string/derniers_pronostics_desc</item>
+        <item name="android:id">@id/pronostics_title</item>
+    </style>
+
+    <style name="pronostics_recycler">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_below">@id/pronostics_title</item>
+        <item name="android:id">@id/pronostics_recycler</item>
+    </style>
+
+    <style name="pronostics_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="pronostics_loader_parent" parent="auth_parent">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">visible</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:id">@id/pronostics_loader</item>
+    </style>
+
+    <style name="pronostic_item_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:id">@id/pronostic_item_name</item>
+        <item name="fontPath">fonts/ProximaNova-Semibold.otf</item>
+    </style>
+
+    <style name="pronostic_item_pilots" parent="game_item_subline">
+        <item name="android:id">@id/pronostic_item_pilots</item>
+    </style>
+
+    <style name="pronostic_item_point">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/green_1</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:id">@id/pronostic_item_point</item>
+    </style>
+
+</resources>

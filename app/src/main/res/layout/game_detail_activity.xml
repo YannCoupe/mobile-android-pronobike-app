@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/game_detail_container">
+
+    <android.support.v7.widget.Toolbar style="@style/game_detail_toolbar">
+
+            <ImageButton style="@style/game_detail_list" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <View style="@style/main_top_bar_separator"/>
+
+    <LinearLayout style="@style/game_detail_fragment_container" />
+
+</LinearLayout>

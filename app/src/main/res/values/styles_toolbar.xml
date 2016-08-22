@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="detail_toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:theme">@style/toolbar_style</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="game_detail_toolbar" parent="detail_toolbar">
+        <item name="android:id">@id/game_detail_toolbar</item>
+    </style>
+
+    <style name="rules_toolbar" parent="detail_toolbar">
+        <item name="android:id">@id/rules_toolbar</item>
+    </style>
+
+    <style name="game_create_toolbar" parent="detail_toolbar">
+        <item name="android:id">@id/game_create_toolbar</item>
+    </style>
+
+    <style name="join_toolbar" parent="detail_toolbar">
+        <item name="android:id">@id/join_toolbar</item>
+    </style>
+
+    <style name="bet_toolbar" parent="detail_toolbar">
+        <item name="android:id">@id/bet_toolbar</item>
+    </style>
+
+    <style name="pronostics_toolbar" parent="detail_toolbar">
+        <item name="android:id">@id/pronostics_toolbar</item>
+    </style>
+
+    <style name="toolbar_style" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColorPrimary">@color/green_1</item>
+    </style>
+
+</resources>

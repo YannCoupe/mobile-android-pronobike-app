@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/join_container">
+
+    <android.support.v7.widget.Toolbar style="@style/join_toolbar"/>
+
+    <View style="@style/main_top_bar_separator"/>
+
+    <LinearLayout style="@style/join_fragment_container" />
+
+</LinearLayout>
